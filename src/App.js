@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState }  from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from './store/slices/themeSlice';
+import './scss/app.scss'
+import Nada from './component/Nada';
+import DarkModeButton from './component/darkModeButton/DarkModeButton';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App() {	
+
+	const themeDark = useSelector( (state) => state.theme.dark )
+	const dispatch = useDispatch();
+
+	return (
+		<div className={ themeDark ? 'container theme--dark' : 'container theme' } >
+			<h1 className='titulo' >
+				TEXTO PRINCIPAL
+			</h1>
+			<p className='texto'> vfsnjfhop´fjojf hdsjgfnduio fdhnjgifdshugfjdai hgfidsgdnjlfgaui ufdhugfd ugd </p>
+            <DarkModeButton></DarkModeButton>
+			<button
+                onClick={ () => dispatch( toggleTheme()) }
+            >cambiar</button>
+			<Nada></Nada>
+		</div>
+	);
 }
 
 export default App;

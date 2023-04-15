@@ -1,0 +1,42 @@
+.buttonDark__container {
+  width: 60px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: var(--color__texto2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+.buttonDark__container .buttonDark__ball {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color__texto1);
+  transition: all 1s;
+}
+
+.theme {
+  --color__primario: #ffffff;
+  --color__texto1: #393e41;
+  --color__texto2: #d3d0cb;
+}
+.theme--dark {
+  --color__primario: #393e41;
+  --color__texto1: #ffffff;
+  --color__texto2: #d3d0cb;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color__primario);
+}
+.container .titulo {
+  color: var(--color__texto1);
+  padding: 1rem;
+}
+.container .texto {
+  color: var(--color__texto2);
+}
+
+/*# sourceMappingURL=app.css.map */
