@@ -9,7 +9,11 @@
     justify-content: flex-start;
     align-items: center;
     padding: 5px;
-    position: relative;
+
+    //Dejar el position al relative para que funcione el position absolute del circulo interno
+    position: absolute;
+    right: 5px;
+    top: 5px;
     
 
     &[data-is-on='true']{

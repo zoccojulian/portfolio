@@ -34,11 +34,11 @@ const DarkModeButton = () => {
                         animate={{opacity:1}}
                         exit={{opacity:0}}
                     >
-                        {themeDark ? 
+                        {/* {themeDark ? 
                             <DarkModeIcon className='icon' ></DarkModeIcon>
                             :
                             <LightModeIcon className='icon'></LightModeIcon>
-                        }
+                        } */}
                     </motion.div>
                 </AnimatePresence>
             </motion.div>

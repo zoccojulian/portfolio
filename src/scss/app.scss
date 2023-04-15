@@ -30,6 +30,7 @@ $color__icon:#ffbc42;
     height: 100vh;
     background-color: var(--color__primario);
     transition: all var(--transition_color);
+    position: relative;
 
     .titulo{
         color: var(--color__texto1);
@@ -39,6 +40,7 @@ $color__icon:#ffbc42;
 
     .texto{
         color: var(--color__texto2);
+        padding: 0 1rem ;
     }
 
     
