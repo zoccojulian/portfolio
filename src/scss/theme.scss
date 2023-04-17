@@ -1,0 +1,34 @@
+// $color__primario-dark: #393e41;
+// $color__texto1-dark: #ffffff;
+// $color__texto2-dark: #d3d0cbff;
+// $color__icon-dark:#ffffff;
+
+// $color__primario: #ffffff;
+// $color__texto1: #393e41;
+// $color__texto2: #d3d0cbff;
+// $color__icon:#ffbc42;
+
+
+$color1: #22aaa1ff;
+$color2: #393e41ff;
+$color3: #989992ff;
+$color4: #ecf0f1ff;
+$color5: #0075f2ff;
+$color6: #d3d0cbff;
+
+.theme{
+    --color__primario: #{$color2};
+    --color__texto-principal: #{$color4};
+    --color__texto-secundario: #{$color6};
+    --color__icon:#{$color4};
+    
+
+    &--dark{
+
+        --color__primario: #{$color4};
+        --color__texto-principal: #{$color2};
+        --color__texto-secundario: #{$color3};
+        --color__icon: #{$color2};
+        
+    }
+}

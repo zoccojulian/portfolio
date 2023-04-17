@@ -1,30 +1,4 @@
 
-$color__primario-dark: #393e41ff;
-$color__texto1-dark: #ffffff;
-$color__texto2-dark: #d3d0cbff;
-$color__icon-dark:#ffffff;
-
-$color__primario: #ffffff;
-$color__texto1: #393e41ff;
-$color__texto2: #d3d0cbff;
-$color__icon:#ffbc42;
-
-.theme{
-    --color__primario: #{$color__primario};
-    --color__texto1: #{$color__texto1};
-    --color__texto2: #{$color__texto2};
-    --color__icon:#{$color__icon};
-    &--dark{
-        --color__primario: #{$color__primario-dark};
-        --color__texto1: #{$color__texto1-dark};
-        --color__texto2: #{$color__texto2-dark};
-        --color__icon: #{$color__icon-dark};
-        
-    }
-}
-
-
-
 .container{
     width: 100vw;
     height: 100vh;
@@ -33,13 +7,13 @@ $color__icon:#ffbc42;
     position: relative;
 
     .titulo{
-        color: var(--color__texto1);
+        color: var(--color__texto-principal);
         padding: 1rem;
         
     }
 
     .texto{
-        color: var(--color__texto2);
+        color: var(--color__texto-secundario);
         padding: 0 1rem ;
     }
 

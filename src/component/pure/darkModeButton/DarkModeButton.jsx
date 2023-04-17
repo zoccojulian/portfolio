@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { motion , AnimatePresence} from 'framer-motion';
-import '../../scss/component/darkModeButton.scss';
 import { useSelector , useDispatch} from 'react-redux';
-import { toggleTheme } from '../../store/slices/themeSlice';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
+import { toggleTheme } from '../../../store/slices/themeSlice';
+
+//Style
+import './darkModeButton.scss';
 
 
 const DarkModeButton = () => {

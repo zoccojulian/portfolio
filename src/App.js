@@ -1,21 +1,22 @@
 import React, { useState }  from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleTheme } from './store/slices/themeSlice';
-import './scss/app.scss'
-import DarkModeButton from './component/darkModeButton/DarkModeButton';
+import { useSelector } from 'react-redux';
+import './scss/theme.scss';
+import './scss/app.scss';
+import Header from './component/container/header/header';
 
 function App() {	
 
 	const themeDark = useSelector( (state) => state.theme.dark )
-	const dispatch = useDispatch();
 
 	return (
 		<div className={ themeDark ? 'container theme--dark' : 'container theme' } >
-			<DarkModeButton></DarkModeButton>
-			<h1 className='titulo' >
-				TEXTO PRINCIPAL
-			</h1>
-			<p className='texto'> vfsnjfhop´fjojf hdsjgfnduio fdhnjgifdshugfjdai hgfidsgdnjlfgaui ufdhugfd ugd </p>
+			<Header className='header'></Header>
+			<div style={{width:'100%'}}>
+				<h1 className='titulo' style={{width:'100%'}}>
+					TEXTO PRINCIPAL
+				</h1>
+				<p className='texto' style={{width:'100%'}}> vfsnjfhop´fjojf hdsjgfnduio fdhnjgifdshugfjdai hgfidsgdnjlfgaui ufdhugfd ugd </p>
+			</div>
 		</div>
 	);
 }

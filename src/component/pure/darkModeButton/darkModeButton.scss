@@ -1,19 +1,13 @@
-
-
 .buttonDark__container{
     width: 50px;
     height: 30px;
     border-radius: 50px;
-    background-color: var(--color__texto1);
+    background-color: var(--color__texto-principal);
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 5px;
-
-    //Dejar el position al relative para que funcione el position absolute del circulo interno
-    position: absolute;
-    right: 5px;
-    top: 5px;
+    position: relative;
     
 
     &[data-is-on='true']{
@@ -37,7 +31,7 @@
             .icon{
                 width: 100%;
                 height: 100%;
-                color: var(--color__texto1);
+                color: var(--color__priario);
             }
         }
 
