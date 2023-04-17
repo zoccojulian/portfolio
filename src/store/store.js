@@ -1,14 +1,14 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from './slices/themeSlice';
-import seccionSlice from "./slices/seccionSlice";
+import seccionReducer from "./slices/seccionSlice";
 
 
 export const store = configureStore(
     {
         reducer: {
             theme: themeReducer,
-            secciones:seccionSlice
+            secciones:seccionReducer
         },
         devTools: process.env.NODE_ENV !== "production",
     }

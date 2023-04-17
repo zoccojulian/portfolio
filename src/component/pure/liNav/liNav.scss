@@ -1,6 +1,8 @@
 .list__item{
     position: relative;
     list-style: none;
+    cursor: pointer;
+    
     .list__item-line{
         position: absolute;
         bottom: -1px;
