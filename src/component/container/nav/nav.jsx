@@ -3,15 +3,15 @@ import LiNav from '../../pure/liNav/LiNav';
 import { secciones } from '../../../js/secciones';
 import ButtonHamburguer from '../../pure/hamburguer/buttonHamburguer';
 import { motion } from 'framer-motion';
+import useScreenSize from '../../hooks/useResize';
 
 //Style
 import './nav.scss';
 
-
-
-
-
 const Nav = () => {
+
+    // Hook para obtener cambios en el ancho de la página
+    const { width } = useScreenSize();
 
     const list = [
         {nombre: 'INICIO', link: secciones.INICIO},
@@ -29,8 +29,8 @@ const Nav = () => {
         open: {
             transform: 'translateX(0px)'
         },
-        close: {
-            transform: 'translateX(-200px)'
+        closed: {
+            transform: 'translateX(-300px)'
         }
     }
 
@@ -41,9 +41,10 @@ const Nav = () => {
     return (
         <>
         <motion.nav 
+            initial={ 'closed' }
             className='navSeccion'
             variants={ variants }
-            animate={ isOpen ? 'open' : 'close' }
+            animate={ isOpen ? 'open' : 'closed' }
         >
             <ul className='navSeccion__lista'>
                 {list.map( (item, key) => (
@@ -55,9 +56,10 @@ const Nav = () => {
                 ) )}
             </ul>
         </motion.nav>
-        <ButtonHamburguer
+            <ButtonHamburguer
                 toggle= { toggle }
-            ></ButtonHamburguer>
+                isOpen = { isOpen }
+            ></ButtonHamburguer> 
         </>
     );
 }

@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--color__primario);
-    transition: all var(--transition_color);
+    transition: background-color var(--transition_color);
     position: relative;
 
     .titulo{
