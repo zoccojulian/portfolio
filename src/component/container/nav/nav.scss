@@ -1,5 +1,7 @@
 .navSeccion{
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 0;
+    top: 0;
+    background-color: var(--color__texto-principal);
+    padding: 1rem 2rem .5rem 1rem;
 }

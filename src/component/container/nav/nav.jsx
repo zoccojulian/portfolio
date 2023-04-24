@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LiNav from '../../pure/liNav/LiNav';
 import { secciones } from '../../../js/secciones';
 import ButtonHamburguer from '../../pure/hamburguer/buttonHamburguer';
+import { motion } from 'framer-motion';
+
 //Style
 import './nav.scss';
+
 
 
 
@@ -19,10 +22,29 @@ const Nav = () => {
         {nombre: 'CONTACTO', link:secciones.CONTACTO},
     ]
 
+    const [isOpen, setIsOpen] = useState(false);
+
+
+    const variants = {
+        open: {
+            transform: 'translateX(0px)'
+        },
+        close: {
+            transform: 'translateX(-200px)'
+        }
+    }
+
+    const toggle = () => {
+        setIsOpen((isOpen) => !isOpen)
+    }
 
     return (
-        <nav className='navSeccion'>
-            <ButtonHamburguer></ButtonHamburguer>
+        <>
+        <motion.nav 
+            className='navSeccion'
+            variants={ variants }
+            animate={ isOpen ? 'open' : 'close' }
+        >
             <ul className='navSeccion__lista'>
                 {list.map( (item, key) => (
                     <LiNav
@@ -32,7 +54,11 @@ const Nav = () => {
                     ></LiNav>
                 ) )}
             </ul>
-        </nav>
+        </motion.nav>
+        <ButtonHamburguer
+                toggle= { toggle }
+            ></ButtonHamburguer>
+        </>
     );
 }
 
