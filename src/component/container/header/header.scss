@@ -6,4 +6,15 @@
     position: relative;
     padding: .5rem;
     border-bottom:1px solid var(--color__texto-principal);
+
+}
+
+
+
+@media only screen and ( min-width:992px ){
+
+    .header{
+        justify-content: space-between;
+        align-items: center;
+    }
 }

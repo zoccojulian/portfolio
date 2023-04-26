@@ -3,15 +3,14 @@ import LiNav from '../../pure/liNav/LiNav';
 import { secciones } from '../../../js/secciones';
 import ButtonHamburguer from '../../pure/hamburguer/buttonHamburguer';
 import { motion } from 'framer-motion';
-import useScreenSize from '../../hooks/useResize';
+
 
 //Style
 import './nav.scss';
 
-const Nav = () => {
+const breakPoint = 992;
 
-    // Hook para obtener cambios en el ancho de la página
-    const { width } = useScreenSize();
+const Nav = ( { width } ) => {
 
     const list = [
         {nombre: 'INICIO', link: secciones.INICIO},
@@ -42,9 +41,9 @@ const Nav = () => {
         <>
         <motion.nav 
             initial={ 'closed' }
-            className='navSeccion'
+            className= 'navSeccion'
             variants={ variants }
-            animate={ isOpen ? 'open' : 'closed' }
+            animate={ !isOpen && (width<breakPoint) ? 'closed' : 'open'} 
         >
             <ul className='navSeccion__lista'>
                 {list.map( (item, key) => (
@@ -56,10 +55,12 @@ const Nav = () => {
                 ) )}
             </ul>
         </motion.nav>
-            <ButtonHamburguer
-                toggle= { toggle }
-                isOpen = { isOpen }
-            ></ButtonHamburguer> 
+            { width <=breakPoint &&
+                <ButtonHamburguer
+                    toggle= { toggle }
+                    isOpen = { isOpen }
+                ></ButtonHamburguer> 
+            }
         </>
     );
 }

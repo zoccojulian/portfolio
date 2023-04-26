@@ -2,15 +2,32 @@
     position: relative;
     list-style: none;
     cursor: pointer;
-    
+    color: var(--color__primario);
+    margin-bottom: 1rem;
+    transition: color  var(--transition_color);
+
     .list__item-line{
         position: absolute;
         bottom: -1px;
         left: 0;
         right: 0;
         height: 3px;
-        background: black;
+        background-color: var(--color__primario);
+        transition: background-color var(--transition_color);
     
     }
+}
+
+
+@media only screen and ( min-width:992px ){
+    .list__item{
+        color: var(--color__texto-principal);
+        .list__item-line{
+            background: var(--color__texto-principal);
+        
+        }
+
+    }
+    
 }
 

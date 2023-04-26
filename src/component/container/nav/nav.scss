@@ -5,14 +5,19 @@
     background-color: var(--color__texto-principal);
     padding: 1rem 2rem .5rem 1rem;
 
-    // &.screen{
-    //     position: relative;
-    //     width: 70%;
+}
 
-    //     .navSeccion__lista{
-    //         display: flex;
-    //         flex-direction: row;
-    //         gap: 1rem;
-    //     }
-    // }
+@media only screen and ( min-width:992px ){
+    .navSeccion{
+        position: relative;
+        width: 80%;
+        background-color: transparent;
+        padding: 0;
+    
+        .navSeccion__lista{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+    }
 }
