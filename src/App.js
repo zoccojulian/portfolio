@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import './scss/theme.scss';
 import './scss/app.scss';
 import Header from './component/container/header/header';
+import Typewriter from "typewriter-effect";
+
 
 function App() {	
 
@@ -16,6 +18,19 @@ function App() {
 					TEXTO PRINCIPAL
 				</h1>
 				<p className='texto' style={{width:'100%'}}> vfsnjfhop´fjojf hdsjgfnduio fdhnjgifdshugfjdai hgfidsgdnjlfgaui ufdhugfd ugd </p>
+				<Typewriter
+					options={{
+						strings: [
+								'Hello',
+								'I´m Developer',
+								'and Video Editor'
+							],
+						autoStart: true,
+						loop: true,
+						deleteSpeed: 100,
+						pauseFor: 3000
+					}}
+				/>
 			</div>
 		</div>
 	);
