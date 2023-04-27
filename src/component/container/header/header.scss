@@ -1,8 +1,10 @@
 .header{
     width: 100vw;
+    height: 54px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content:space-between;
+    align-items: center;
     position: relative;
     padding: .5rem;
     border-bottom:1px solid var(--color__texto-principal);

@@ -13,11 +13,13 @@
         width: 80%;
         background-color: transparent;
         padding: 0;
+        height: auto;
     
         .navSeccion__lista{
             display: flex;
             flex-direction: row;
             gap: 2rem;
+            margin: 0;
         }
     }
 }

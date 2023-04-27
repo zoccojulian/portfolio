@@ -6,21 +6,5 @@
     transition: background-color var(--transition_color);
     position: relative;
 
-    .titulo{
-        color: var(--color__texto-principal);
-        padding: 1rem;
-        
-    }
-
-    .texto{
-        color: var(--color__texto-secundario);
-        padding: 0 1rem ;
-    }
-
-    .Typewriter__wrapper, .Typewriter__cursor{
-        color: white;
-        font-size: 3em;
-    }
-
     
 }

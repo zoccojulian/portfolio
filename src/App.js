@@ -4,6 +4,7 @@ import './scss/theme.scss';
 import './scss/app.scss';
 import Header from './component/container/header/header';
 import Typewriter from "typewriter-effect";
+import Inicio from './component/container/secciones/inicio/inicio';
 
 
 function App() {	
@@ -13,11 +14,7 @@ function App() {
 	return (
 		<div className={ themeDark ? 'container theme--dark' : 'container theme' } >
 			<Header className='header'></Header>
-			<div style={{width:'100%'}}>
-				<h1 className='titulo' style={{width:'100%'}}>
-					TEXTO PRINCIPAL
-				</h1>
-				<p className='texto' style={{width:'100%'}}> vfsnjfhop´fjojf hdsjgfnduio fdhnjgifdshugfjdai hgfidsgdnjlfgaui ufdhugfd ugd </p>
+			{/* <div style={{width:'100%'}}>
 				<Typewriter
 					options={{
 						strings: [
@@ -31,7 +28,9 @@ function App() {
 						pauseFor: 3000
 					}}
 				/>
-			</div>
+			</div> */}
+
+			<Inicio></Inicio>
 		</div>
 	);
 }
