@@ -16,15 +16,37 @@ const LiNav = ( { nombre, link } ) => {
     const irASeccion = () => {
         dispatch( setSeccion(link) )
     }
+
+    const variants = {
+        open: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            y: { stiffness: 1000, velocity: -100 }
+          }
+        },
+        closed: {
+          y: 50,
+          opacity: 0,
+          transition: {
+            y: { stiffness: 1000 }
+          }
+        }
+      };
+
+
+
     return (
-        <li className='list__item' 
-            onClick={ () => irASeccion() }
+        <motion.li 
+            className='list__item' 
+            onClick={ () => irASeccion()}
+            variants = { variants }
         > 
             <h3 className='list__item-titulo'> { nombre } </h3>
             { enSeccion === link &&
                 (<motion.div className='list__item-line' layoutId='seccion'></motion.div>)
             }
-        </li>
+        </motion.li>
     );
 }
 

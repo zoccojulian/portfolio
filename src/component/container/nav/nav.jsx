@@ -26,7 +26,8 @@ const Nav = ( { width } ) => {
 
     const variants = {
         open: {
-            transform: 'translateX(0px)'
+            transform: 'translateX(0px)',
+            transition: { staggerChildren: 0.07, delayChildren: 0.2 }
         },
         closed: {
             transform: 'translateX(-300px)'

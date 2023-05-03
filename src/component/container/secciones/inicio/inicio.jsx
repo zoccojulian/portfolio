@@ -10,10 +10,13 @@ const Inicio = () => {
     return (
         <section className='inicio'>
             <div className='inicio__foto-container'>
-                <img 
-                    className='inicio__foto-front'
-                    src={require('../../../../assets/foto/foto_01_c.png')} 
-                ></img>
+                <div className='inicio__foto-fondo'></div>
+                <div className='inicio__foto'>
+                    <img 
+                        className='inicio__foto-front'
+                        src={require('../../../../assets/foto/foto_01_c.png')} 
+                    ></img>
+                </div>
             </div>
             <h1 className='inicio__nombre'>Julian Zocco</h1>
             <Typewriter

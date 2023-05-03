@@ -7,19 +7,37 @@
     height: calc(100vh - 54px);
 
     .inicio__foto-container{
-        width: 200px;
-        height: 200px;
-        background-image: url('../../../../assets/foto/foto_02_c.png');
-        background-position: center;
-        background-repeat: no-repeat;   
-        background-size: contain;
-        border-radius: 100%;
+        width: 250px;
+        height: 250px;
+        position: relative;
         
-
-        .inicio__foto-front{
+        .inicio__foto-fondo{
             width: 100%;
-            border-radius: 100%;
+            height: 90%;
+            background-position: center;
+            background-repeat: no-repeat;   
+            background-size: contain;
+            border-radius: 38% 62% 56% 44% / 57% 64% 36% 43%;
+            background: #FF0099;
+            background-image: linear-gradient(45deg,#22aaa1ff 0%,#0075f2ff 100%);
+            
+        }
 
+
+
+        .inicio__foto{
+            position: absolute;
+            top: -25px;
+            left: 0;
+            border-radius: 0% 0% 56% 44% / 31% 31% 36% 43% ;
+            overflow: hidden;
+            
+            .inicio__foto-front{
+                width: 100%;
+                transform: scale(1.05) ;
+                
+    
+            }
         }
 
         
