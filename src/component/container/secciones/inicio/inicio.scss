@@ -44,11 +44,15 @@
     }
 
     .inicio__nombre{
-        font-size: 3rem;
+        font-family: var(--font_primaria);
+        font-size: 3em;
         color: var(--color__texto-principal);
+        font-weight: 400;
+        
     }
 
     .Typewriter__wrapper, .Typewriter__cursor{
+        font-family: var(--font_secundaria);
         color: var(--color__texto-principal);
         font-size: 1.5em;
     }

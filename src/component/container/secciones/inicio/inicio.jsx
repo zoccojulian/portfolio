@@ -18,7 +18,7 @@ const Inicio = () => {
                     ></img>
                 </div>
             </div>
-            <h1 className='inicio__nombre'>Julian Zocco</h1>
+            <h1 className='inicio__nombre'>Julian <b>Zocco</b></h1>
             <Typewriter
 					options={{
 						strings: [
