@@ -21,8 +21,11 @@ const LiNav = ( { nombre, link } ) => {
     const dispatch = useDispatch();
 
     const irASeccion = () => {
-        dispatch( setSeccion(link) )
         scroller.scrollTo(link, scrollType);
+
+        //Esto cambiaba el estado del redux secciones. Pero ahora se cambia desde
+        //el scroll de cada seccion. 
+        // dispatch( setSeccion(link) )
     }
 
     const variants = {

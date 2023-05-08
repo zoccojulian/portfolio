@@ -1,32 +1,21 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useDispatch } from 'react-redux';
+import useIsInView from '../../../hooks/useIsInView';
+ 
 
 //Estilos
 import "./sobreMi.scss";
-import { setSeccion } from '../../../../store/slices/seccionSlice';
 import { secciones } from '../../../../js/secciones';
+
 
 const SobreMi = () => {
 
-
-    const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 'some' })
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        
-        if (isInView) {
-            dispatch( setSeccion(secciones.SOBRE_MI) )
-        }
-
-    }, [isInView])
+    const { referencia } = useIsInView(secciones.SOBRE_MI)
 
     return (
-        <section className='sobreMi' ref={ref}>
-            <motion.h2>hola</motion.h2>
-        </section>
+        <motion.section className='sobreMi' ref={referencia} >
+            <motion.h2 >hola</motion.h2>
+        </motion.section>
     );
 }
 

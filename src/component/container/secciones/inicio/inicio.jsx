@@ -4,32 +4,18 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import cvPdf from '../../../../assets/cv/zoccojulian_cv.pdf';
-import { useInView } from 'framer-motion';
-import { useDispatch } from 'react-redux';
+import { secciones } from '../../../../js/secciones';
+import useIsInView from '../../../hooks/useIsInView';
 
 //Estilos
 import './inicio.scss';
-import { secciones } from '../../../../js/secciones';
-import { setSeccion } from '../../../../store/slices/seccionSlice';
 
 const Inicio = () => {
 
-
-    const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 'some' })
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        
-        if (isInView) {
-            dispatch( setSeccion(secciones.INICIO) )
-        }
-
-    }, [isInView])
+    const { referencia } = useIsInView(secciones.INICIO)
 
     return (
-        <section className='inicio' ref={ref}>
+        <section className='inicio' ref={referencia}>
             <div className='inicio__foto-container'>
                 <div className='inicio__foto-fondo'></div>
                 <div className='inicio__foto'>
