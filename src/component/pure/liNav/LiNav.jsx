@@ -2,11 +2,18 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSeccion } from '../../../store/slices/seccionSlice';
 import { motion } from 'framer-motion';
+import { scroller } from 'react-scroll';
 
 
 //Style
 import './liNav.scss';
 
+const scrollType = {
+  duration: 500,
+  delay: 50,
+  smooth: true, // linear “easeInQuint” “easeOutCubic” 
+  offset: -10,
+};
 
 const LiNav = ( { nombre, link } ) => {
 
@@ -15,6 +22,7 @@ const LiNav = ( { nombre, link } ) => {
 
     const irASeccion = () => {
         dispatch( setSeccion(link) )
+        scroller.scrollTo(link, scrollType);
     }
 
     const variants = {
