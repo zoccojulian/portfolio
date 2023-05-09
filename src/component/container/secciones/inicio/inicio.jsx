@@ -4,18 +4,16 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import cvPdf from '../../../../assets/cv/zoccojulian_cv.pdf';
-import { secciones } from '../../../../js/secciones';
-import useIsInView from '../../../hooks/useIsInView';
 
 //Estilos
 import './inicio.scss';
 
 const Inicio = () => {
 
-    const { referencia } = useIsInView(secciones.INICIO)
+
 
     return (
-        <section className='inicio' ref={referencia}>
+        <section className='inicio'>
             <div className='inicio__foto-container'>
                 <div className='inicio__foto-fondo'></div>
                 <div className='inicio__foto'>

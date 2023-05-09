@@ -6,10 +6,12 @@ import Header from './component/container/header/header';
 import Inicio from './component/container/secciones/inicio/inicio';
 import SobreMi from './component/container/secciones/sobreMi/sobreMi';
 import { Element } from 'react-scroll';
+import SectionPrueba from './component/sectionPrueba';
 
 function App() {	
 
-	const themeDark = useSelector( (state) => state.theme.dark )
+	const themeDark = useSelector( (state) => state.theme.dark );
+
 
 	return (
 		<div className={ themeDark ? 'container theme--dark' : 'container theme' } >
@@ -20,13 +22,7 @@ function App() {
 			<Element name='SOBRE_MI'>
 				<SobreMi></SobreMi>
 			</Element>
-			<section
-				style={{
-					width: '100vw',
-					height: '200vh',
-					backgroundColor: 'red'
-				}}
-			></section>
+			<SectionPrueba></SectionPrueba>
 		</div>
 	);
 }
