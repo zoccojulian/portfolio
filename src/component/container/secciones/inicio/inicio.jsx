@@ -4,9 +4,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import cvPdf from '../../../../assets/cv/zoccojulian_cv.pdf';
+import useIsInView from '../../../hooks/useIsInView';
 
 //Estilos
 import './inicio.scss';
+import { secciones } from '../../../../js/secciones';
+
 
 const Inicio = () => {
 

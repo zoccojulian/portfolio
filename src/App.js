@@ -7,6 +7,7 @@ import Inicio from './component/container/secciones/inicio/inicio';
 import SobreMi from './component/container/secciones/sobreMi/sobreMi';
 import { Element } from 'react-scroll';
 import SectionPrueba from './component/sectionPrueba';
+import { secciones } from './js/secciones';
 
 function App() {	
 
@@ -16,13 +17,18 @@ function App() {
 	return (
 		<div className={ themeDark ? 'container theme--dark' : 'container theme' } >
 			<Header className='header'></Header>
-			<Element name='INICIO'>
+			<Element name={secciones.INICIO}>
 				<Inicio></Inicio>
 			</Element>
-			<Element name='SOBRE_MI'>
+			<Element name={secciones.SOBRE_MI}>
 				<SobreMi></SobreMi>
 			</Element>
-			<SectionPrueba></SectionPrueba>
+			<Element name={secciones.EXPERIENCIA}>
+				<SectionPrueba seccion={secciones.EXPERIENCIA} ></SectionPrueba>
+			</Element>
+			<Element name={secciones.FORMACION}>
+				<SectionPrueba seccion={secciones.FORMACION} ></SectionPrueba>
+			</Element>
 		</div>
 	);
 }

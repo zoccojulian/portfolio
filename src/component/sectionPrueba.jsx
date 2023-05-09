@@ -1,14 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import useIsInView from './hooks/useIsInView';
+import { secciones } from '../js/secciones';
 
-const SectionPrueba = () => {
+
+const SectionPrueba = ({seccion}) => {
+
+
+
+	
 
     return (
         <motion.section
 				style={{
 					width: '100vw',
 					height: '300vh',
-					backgroundColor: 'red'
+					backgroundColor: 'white'
 				}}
 			></motion.section>
     );

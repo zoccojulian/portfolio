@@ -1,25 +1,49 @@
-import React, { useRef, useEffect } from 'react';
-import { useInView } from 'framer-motion';
-import { useDispatch } from 'react-redux';
+import React, { useRef, useEffect , useState} from 'react';
+import { useInView, useScroll , useMotionValueEvent} from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSeccion } from '../../store/slices/seccionSlice';
+import { secciones } from '../../js/secciones';
 
 const useIsInView = ( seccion ) => {
 
-    const dispatch = useDispatch();
-
     const referencia = useRef();
-    const isInView = useInView(referencia, {amount:0.5});
+    const { scrollY } = useScroll();
+    const [isUp, setIsUp] = useState({anterior:0, up:false});
+    const dispatch = useDispatch();
+    const inView = useInView(referencia, {amount:0.009});
+
+    const enSeccion = useSelector ( ( state ) => state.secciones.seccion );
+    const [seccionAnterior, setSeccionAnterior] = useState(null)
+
+    useMotionValueEvent(scrollY, 'change', (ev) =>{
+
+        let up = isUp.anterior > ev;
+
+        let nuevoEstado = { anterior:ev, up:isUp.up};
+
+        if( up != isUp.up ){
+            nuevoEstado.up = up;
+        }
+        setIsUp(nuevoEstado)
+
+        // console.log(ev)
+        // console.log(isUp)
+    } )
 
     useEffect(() => {
-        
-        if(isInView){
-            console.log(seccion)
-            dispatch( setSeccion(seccion) )
+
+
+        if(inView && !isUp.up){
+            setSeccionAnterior(enSeccion)
+            console.log(enSeccion)
+            dispatch(setSeccion(seccion))
+        }else if(isUp.up){
+            console.log(seccionAnterior)
+            dispatch(setSeccion(seccionAnterior))
         }
-        
 
-    }, [isInView])
-
+        console.log(inView)
+    }, [inView])
 
     return { referencia };
 }
