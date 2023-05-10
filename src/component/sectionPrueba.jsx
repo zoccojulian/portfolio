@@ -4,18 +4,17 @@ import useIsInView from './hooks/useIsInView';
 import { secciones } from '../js/secciones';
 
 
-const SectionPrueba = ({seccion}) => {
+const SectionPrueba = ({seccion, anterior,  color}) => {
 
-
-
-	
+	const { referencia } = useIsInView(seccion, anterior);
 
     return (
         <motion.section
+				ref={referencia}
 				style={{
 					width: '100vw',
-					height: '300vh',
-					backgroundColor: 'white'
+					height: '200vh',
+					backgroundColor: color 
 				}}
 			></motion.section>
     );

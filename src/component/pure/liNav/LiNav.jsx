@@ -21,7 +21,7 @@ const LiNav = ( { nombre, link } ) => {
     const dispatch = useDispatch();
 
     const irASeccion = () => {
-        dispatch( setSeccion(link) )
+        // dispatch( setSeccion(link) )
         scroller.scrollTo(link, scrollType);
         
     }
@@ -53,7 +53,11 @@ const LiNav = ( { nombre, link } ) => {
         > 
             <h3 className='list__item-titulo'> { nombre } </h3>
             { enSeccion === link &&
-                (<motion.div className='list__item-line' layoutId='seccion'></motion.div>)
+                (<motion.div 
+                    className='list__item-line'
+                    layoutId='seccion'
+                    transition={{delay: 0.3}}
+                ></motion.div>)
             }
         </motion.li>
     );

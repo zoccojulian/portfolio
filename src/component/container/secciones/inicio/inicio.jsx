@@ -14,9 +14,10 @@ import { secciones } from '../../../../js/secciones';
 const Inicio = () => {
 
 
+    const { referencia } = useIsInView(secciones.INICIO)
 
     return (
-        <section className='inicio'>
+        <section className='inicio' ref={referencia}>
             <div className='inicio__foto-container'>
                 <div className='inicio__foto-fondo'></div>
                 <div className='inicio__foto'>

@@ -4,46 +4,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSeccion } from '../../store/slices/seccionSlice';
 import { secciones } from '../../js/secciones';
 
-const useIsInView = ( seccion ) => {
+const useIsInView = ( seccion , anterior=secciones.INICIO ) => {
 
     const referencia = useRef();
-    const { scrollY } = useScroll();
-    const [isUp, setIsUp] = useState({anterior:0, up:false});
+    const inView = useInView(referencia,{amount: 0.1});
     const dispatch = useDispatch();
-    const inView = useInView(referencia, {amount:0.009});
 
-    const enSeccion = useSelector ( ( state ) => state.secciones.seccion );
-    const [seccionAnterior, setSeccionAnterior] = useState(null)
-
-    useMotionValueEvent(scrollY, 'change', (ev) =>{
-
-        let up = isUp.anterior > ev;
-
-        let nuevoEstado = { anterior:ev, up:isUp.up};
-
-        if( up != isUp.up ){
-            nuevoEstado.up = up;
-        }
-        setIsUp(nuevoEstado)
-
-        // console.log(ev)
-        // console.log(isUp)
-    } )
+    const isUp = useSelector((state) => state.scroll.isUp);
 
     useEffect(() => {
+        
+        if(inView && !isUp){
+            dispatch(setSeccion(seccion));
+        }
+        if(!inView && isUp){
 
-
-        if(inView && !isUp.up){
-            setSeccionAnterior(enSeccion)
-            console.log(enSeccion)
-            dispatch(setSeccion(seccion))
-        }else if(isUp.up){
-            console.log(seccionAnterior)
-            dispatch(setSeccion(seccionAnterior))
+            dispatch(setSeccion(anterior))
         }
 
-        console.log(inView)
     }, [inView])
+
 
     return { referencia };
 }
