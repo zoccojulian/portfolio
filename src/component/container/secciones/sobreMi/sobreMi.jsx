@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import "./sobreMi.scss";
 import useIsInView from '../../../hooks/useIsInView';
 import { secciones } from '../../../../js/secciones';
+import TituloSeccion from '../../../pure/tituloSeccion/tituloSeccion';
 
 const SobreMi = () => {
 
@@ -15,7 +16,7 @@ const SobreMi = () => {
         <motion.section className='sobreMi'
             ref={referencia}
         >
-        <motion.h2>hola</motion.h2>
+            <TituloSeccion titulo='Sobre Mi' ></TituloSeccion>
         </motion.section>
     );
 }

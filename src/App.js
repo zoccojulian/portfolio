@@ -36,16 +36,16 @@ function App() {
 	return (
 		<div className={ themeDark ? 'container theme--dark' : 'container theme' } >
 			<Header className='header'></Header>
-			<Element name={secciones.INICIO}>
+			<Element name={secciones.INICIO} className='element'>
 				<Inicio></Inicio>
 			</Element>
-			<Element name={secciones.SOBRE_MI}>
-				<SobreMi></SobreMi>
-			</Element>
-			<Element name={secciones.EXPERIENCIA}>
+			<Element name={secciones.SOBRE_MI} className='element'> 
+				<SobreMi> </SobreMi>
+			 </Element>
+			<Element name={secciones.EXPERIENCIA} className='element'>
 				<SectionPrueba seccion={secciones.EXPERIENCIA} anterior={secciones.SOBRE_MI}color='red'></SectionPrueba>
 			</Element>
-			<Element name={secciones.FORMACION}>
+			<Element name={secciones.FORMACION} className='element'>
 				<SectionPrueba seccion={secciones.FORMACION} anterior={secciones.EXPERIENCIA}color='blue'></SectionPrueba>
 			</Element>
 		</div>
