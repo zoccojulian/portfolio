@@ -10,6 +10,8 @@
 
 
 $color1: #22aaa1ff;
+$color1b: rgb(7, 129, 120);
+$color1c: rgb(139, 237, 230);
 $color2: #393e41ff;
 $color3: #989992ff;
 $color4: #ecf0f1ff;
@@ -21,6 +23,7 @@ $color6: #d3d0cbff;
     --color__texto-principal: #{$color4};
     --color__texto-secundario: #{$color6};
     --color__icon:#{$color4};
+    --color__fondo-sobreMi: #{$color1b};
     
 
     &--dark{
@@ -29,6 +32,7 @@ $color6: #d3d0cbff;
         --color__texto-principal: #{$color2};
         --color__texto-secundario: #{$color3};
         --color__icon: #{$color2};
+        --color__fondo-sobreMi: #{$color4};
         
     }
 }

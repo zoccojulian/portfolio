@@ -6,5 +6,7 @@
 
     .tituloSeccion__titulo{
         font-size: 2rem;
+        color: var(--color__texto-principal);
+        transition: color var(--transition_color);
     }
 }
