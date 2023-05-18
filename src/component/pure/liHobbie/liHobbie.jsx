@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react';
 import './liHobbie.scss';
 
-const LiHobbie = ({children, isView}) => {
+const LiHobbie = ({element, isView}) => {
 
     return (
-        <li className='liHobbie'>
-            {children}
+        <li 
+            className='liHobbie'
+            style={{color: element.nombre == isView && 'red'}}
+        >
+            {element.icon}
         </li>
     );
 }

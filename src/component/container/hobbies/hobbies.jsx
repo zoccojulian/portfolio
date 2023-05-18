@@ -55,7 +55,7 @@ const Hobbies = () => {
             <h3 className='hobbies__titulo'>Hobbies</h3>
             <ul className='hobbies__lista'>
             {listaIcons.map((element, key)=>(
-                <LiHobbie key={key} isView={hobbie.select}>{element.icon}</LiHobbie>
+                <LiHobbie key={key} isView={hobbie.select.nombre} element={element}></LiHobbie>
             ))}
             </ul>
             <h4>{hobbie.select.nombre}</h4>
