@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import './liHobbie.scss';
 
-const LiHobbie = ({icon}) => {
+const LiHobbie = ({children, isView}) => {
+
     return (
-        <li>
-            {icon}
+        <li className='liHobbie'>
+            {children}
         </li>
     );
 }

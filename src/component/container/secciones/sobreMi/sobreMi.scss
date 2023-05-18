@@ -5,16 +5,22 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--color__fondo-sobreMi);
+    padding-top: 3rem;
     
     .sobreMi__texto-container{
         text-align: center;
         width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .sobreMi__texto{
         font-size: 1.5rem;
         color: var(--color__texto-secundario);
         transition: color var(--transition_color);
+
     }
 
 }
