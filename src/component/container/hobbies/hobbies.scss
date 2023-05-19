@@ -4,7 +4,8 @@
 
     .hobbies__titulo{
         font-size: 1.8rem;
-        
+        color: var(--color__hobbie-selecionado);
+        transition: color var(--transition_color);
     }
 
     .hobbies__lista{
@@ -15,5 +16,11 @@
         justify-content: center;
 
 
+    }
+
+    .hobbie__nombre{
+        font-size: 1.5rem;
+        color: var(--color__hobbie-selecionado);
+        transition: color var(--transition_color);
     }
 }

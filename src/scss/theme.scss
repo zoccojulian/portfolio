@@ -19,20 +19,25 @@ $color5: #0075f2ff;
 $color6: #d3d0cbff;
 
 .theme{
-    --color__primario: #{$color2};
-    --color__texto-principal: #{$color4};
-    --color__texto-secundario: #{$color6};
-    --color__icon:#{$color4};
-    --color__fondo-sobreMi: #{$color1b};
+
+    --color__primario: #{$color4};
+    --color__texto-principal: #{$color2};
+    --color__texto-secundario: #{$color3};
+    --color__icon: #{$color2};
+    --color__fondo-sobreMi: #{$color4};
+    --color__hobbie : #{$color3};
+    --color__hobbie-selecionado :#{$color1b};
     
 
     &--dark{
 
-        --color__primario: #{$color4};
-        --color__texto-principal: #{$color2};
-        --color__texto-secundario: #{$color3};
-        --color__icon: #{$color2};
-        --color__fondo-sobreMi: #{$color4};
-        
+        --color__primario: #{$color2};
+        --color__texto-principal: #{$color4};
+        --color__texto-secundario: #{$color6};
+        --color__icon:#{$color4};
+        --color__fondo-sobreMi: #{$color1b};
+        --color__hobbie : #{$color2};
+        --color__hobbie-selecionado :#{$color4};
+
     }
 }

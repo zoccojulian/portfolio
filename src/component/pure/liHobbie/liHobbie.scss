@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     font-size: 3rem;
+    transition: color var(--transition_color), opacity var(--transition_color) ;
 
     .mui__icon{
         font-size: 2.3rem;

@@ -6,6 +6,7 @@
     align-items: center;
     background-color: var(--color__fondo-sobreMi);
     padding-top: 3rem;
+    transition: background-color var(--transition_color);
     
     .sobreMi__texto-container{
         text-align: center;

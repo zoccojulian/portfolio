@@ -58,7 +58,7 @@ const Hobbies = () => {
                 <LiHobbie key={key} isView={hobbie.select.nombre} element={element}></LiHobbie>
             ))}
             </ul>
-            <h4>{hobbie.select.nombre}</h4>
+            <h4 className='hobbie__nombre'>{hobbie.select.nombre}</h4>
         </div>
     );
 }
