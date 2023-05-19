@@ -11,8 +11,7 @@ import './liNav.scss';
 const scrollType = {
   duration: 500,
   delay: 50,
-  smooth: true, // linear “easeInQuint” “easeOutCubic” 
-  offset: -10,
+  smooth: true // linear “easeInQuint” “easeOutCubic” 
 };
 
 const LiNav = ( { nombre, link } ) => {

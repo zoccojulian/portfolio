@@ -53,12 +53,15 @@ const Hobbies = () => {
     return (
         <div className='hobbies__container'>
             <h3 className='hobbies__titulo'>Hobbies</h3>
-            <ul className='hobbies__lista'>
-            {listaIcons.map((element, key)=>(
-                <LiHobbie key={key} isView={hobbie.select.nombre} element={element}></LiHobbie>
-            ))}
-            </ul>
-            <h4 className='hobbie__nombre'>{hobbie.select.nombre}</h4>
+            <div className='hobbie__lista-container'> 
+                <ul className='hobbies__lista'>
+                {listaIcons.map((element, key)=>(
+                    <LiHobbie key={key} isView={hobbie.select.nombre} element={element}></LiHobbie>
+                ))}
+                </ul>
+                <h4 className='hobbie__nombre'>{hobbie.select.nombre}</h4>
+            </div>
+            
         </div>
     );
 }

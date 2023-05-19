@@ -15,13 +15,27 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        .sobreMi__texto{
+            font-size: 1.5rem;
+            color: var(--color__texto-secundario);
+            transition: color var(--transition_color);
+    
+        }
     }
-
-    .sobreMi__texto{
-        font-size: 1.5rem;
-        color: var(--color__texto-secundario);
-        transition: color var(--transition_color);
-
-    }
-
 }
+
+
+// @media only screen and (max-width: 768px ) and (orientation: landscape){
+
+//     .sobreMi{
+//         padding-top: 3.5rem;
+//         .sobreMi__texto-container{
+
+//             .sobreMi__texto{
+//                 font-size: 1.2rem;
+//             }
+//         }
+//     }
+
+// }
