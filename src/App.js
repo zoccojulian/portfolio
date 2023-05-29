@@ -10,6 +10,7 @@ import SectionPrueba from './component/sectionPrueba';
 import { secciones } from './js/secciones';
 import { useScroll , useMotionValueEvent } from 'framer-motion';
 import { setIsUp, setScroll } from './store/slices/scrollSlice';
+import Experiencia from './component/container/secciones/experiencia/experiencia';
 
 function App() {	
 
@@ -43,7 +44,7 @@ function App() {
 				<SobreMi> </SobreMi>
 			 </Element>
 			<Element name={secciones.EXPERIENCIA} className='element'>
-				<SectionPrueba seccion={secciones.EXPERIENCIA} anterior={secciones.SOBRE_MI}color='red'></SectionPrueba>
+				<Experiencia></Experiencia>
 			</Element>
 			<Element name={secciones.FORMACION} className='element'>
 				<SectionPrueba seccion={secciones.FORMACION} anterior={secciones.EXPERIENCIA}color='blue'></SectionPrueba>
