@@ -26,10 +26,7 @@ const Hobbies = () => {
 
     const nuevoEstado = ( estadoAnterior) => {
 
-        console.log(listaIcons.length == estadoAnterior.posicion+1)
-
         if(listaIcons.length == estadoAnterior.posicion+1){
-            console.log('termino')
             return { posicion:0, select: listaIcons[0]}
         }else{
             return { posicion: estadoAnterior.posicion + 1 , select: listaIcons[estadoAnterior.posicion + 1] }
