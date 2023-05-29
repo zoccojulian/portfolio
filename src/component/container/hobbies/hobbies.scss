@@ -28,21 +28,7 @@
 
 }
 
-@media (orientation: landscape){
-    .hobbies__container{
-        .hobbies__titulo{
-            font-size: 1.4rem;
-        }
-        .hobbie__lista-container{
-        
-            .hobbie__nombre{
-                font-size: 1.1rem;
-            }
-        }
-    }
-}
-
-@media only screen and(min-width: 768px){
+@media only screen and (min-width: 992px){
     .hobbies__container{
         .hobbies__titulo{
             font-size: 3rem;
@@ -51,6 +37,20 @@
         
             .hobbie__nombre{
                 font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (orientation: landscape){
+    .hobbies__container{
+        .hobbies__titulo{
+            font-size: 1.4rem;
+        }
+        .hobbie__lista-container{
+        
+            .hobbie__nombre{
+                font-size: 1.1rem;
             }
         }
     }
