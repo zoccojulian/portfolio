@@ -26,16 +26,52 @@
 }
 
 
-// @media only screen and (max-width: 768px ) and (orientation: landscape){
+@media only screen and(min-width: 768px){
+    .sobreMi{
+        
+        .sobreMi__texto-container{
+            width: 90%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            .sobreMi__texto{
+                font-size: 2.3rem;
+            }
+        }
+    }
+}
 
-//     .sobreMi{
-//         padding-top: 3.5rem;
-//         .sobreMi__texto-container{
 
-//             .sobreMi__texto{
-//                 font-size: 1.2rem;
-//             }
-//         }
-//     }
 
-// }
+@media (orientation: landscape) and (max-width: 768px) {
+
+    .sobreMi{
+        .sobreMi__texto-container{
+            flex-direction: row;
+            width: 90%;
+            height: 100%;
+            align-items: center;
+            .sobreMi__texto{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px){
+    .sobreMi{
+        .sobreMi__texto-container{
+            flex-direction: row;
+            width: 90%;
+            height: 70%;
+            align-items: center;
+            .sobreMi__texto{
+                width: 70%;
+                font-size: 2rem;
+                text-align: start;
+            }
+        }
+    }
+}

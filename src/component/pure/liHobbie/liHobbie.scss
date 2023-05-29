@@ -10,3 +10,27 @@
         font-size: 2.3rem;
     }
 }
+
+@media (orientation: landscape){
+    .liHobbie{
+        .mui__icon{
+            font-size: 1.8rem;
+        }
+    }
+}
+
+@media only screen and(min-width: 768px){
+    .liHobbie{
+        .mui__icon{
+            font-size: 4rem;
+        }
+    }
+}
+
+@media only screen and(min-width: 992px){
+    .liHobbie{
+        .mui__icon{
+            font-size: 2.5rem;
+        }
+    }
+}
