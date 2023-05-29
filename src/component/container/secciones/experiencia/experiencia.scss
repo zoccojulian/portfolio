@@ -1,12 +1,25 @@
 .experiencia{
     padding-top: 3rem;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     .experiencia__container{
-
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
         .experiencia__lista{
-
+            margin: 0;
+            padding: 0;
+            padding-bottom: 1rem;
+            width: 100%;
+            height: 70%;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
         }
     }
 }
