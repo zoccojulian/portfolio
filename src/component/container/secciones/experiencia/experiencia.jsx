@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import './experiencia.scss';
 import TituloSeccion from '../../../pure/tituloSeccion/tituloSeccion';
 import LiExperiencia from '../../../pure/liExperiencia/liExperiencia';
+import { motion } from 'framer-motion';
+import useIsInView from '../../../hooks/useIsInView';
+import { secciones } from '../../../../js/secciones';
 
 const listaExperiencia = [
     {
@@ -53,10 +56,12 @@ const listaReverse = listaExperiencia.reverse();
 
 const Experiencia = () => {
 
+    const { referencia } = useIsInView(secciones.EXPERIENCIA, secciones.SOBRE_MI)
+
     const [selectId, setSelectId] = useState(null)
 
     return (
-        <section className='experiencia'>
+        <motion.section className='experiencia' ref={referencia}>
             <TituloSeccion titulo='Experiencia' ></TituloSeccion>
             <div className='experiencia__container'>
                 <ul className='experiencia__lista'>
@@ -66,7 +71,7 @@ const Experiencia = () => {
                     
                 </ul>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

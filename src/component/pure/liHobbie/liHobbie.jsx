@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import './liHobbie.scss';
+import { motion } from 'framer-motion';
 
 const LiHobbie = ({element, isView}) => {
 
@@ -15,12 +16,13 @@ const LiHobbie = ({element, isView}) => {
     }
 
     return (
-        <li 
+        <motion.li 
+            key={element.nombre}
             className='liHobbie'
             style={element.nombre == isView ? style.si : style.no}
         >
             {element.icon}
-        </li>
+        </motion.li>
     );
 }
 

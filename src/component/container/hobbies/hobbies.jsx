@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './hobbies.scss';
+import { motion , AnimatePresence} from 'framer-motion';
 
 import PoolIcon from '@mui/icons-material/Pool';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
@@ -56,7 +57,19 @@ const Hobbies = () => {
                     <LiHobbie key={key} isView={hobbie.select.nombre} element={element}></LiHobbie>
                 ))}
                 </ul>
-                <h4 className='hobbie__nombre'>{hobbie.select.nombre}</h4>
+                <AnimatePresence mode='wait' >
+                    <motion.h4 
+                        className='hobbie__nombre'
+                        key={hobbie.select.nombre && hobbie.select.nombre}
+                        initial={{ transform: 'translateY(10px)', opacity: 0 }}
+                        animate={{ transform: 'translateY(0px)', opacity: 1 }}
+                        exit={{ transform: 'translateY(-10px)', opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        {hobbie.select.nombre}
+                    </motion.h4>
+                </AnimatePresence>
+
             </div>
             
         </div>
