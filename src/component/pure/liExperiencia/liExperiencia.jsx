@@ -47,7 +47,7 @@ const LiExperiencia = ({experiencia, setSelectId, selectId}) => {
             animate={ visible == experiencia.nombre ? 'hidden' : 'visible'}
         >
             <div className='liExperiencia__textos'>
-                
+                <span className='liExperiencia__nombre'>{experiencia.nombre}</span>
             </div>
         </motion.li>
     );

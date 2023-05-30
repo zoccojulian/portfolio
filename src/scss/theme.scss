@@ -17,6 +17,7 @@ $color3: #989992ff;
 $color4: #ecf0f1ff;
 $color5: #0075f2ff;
 $color6: #d3d0cbff;
+$color7: rgba(236, 240, 241, 0.436);
 
 .theme{
 
@@ -27,7 +28,6 @@ $color6: #d3d0cbff;
     --color__fondo-sobreMi: #{$color4};
     --color__hobbie : #{$color3};
     --color__hobbie-selecionado :#{$color1b};
-    
 
     &--dark{
 
