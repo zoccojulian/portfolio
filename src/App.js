@@ -41,7 +41,7 @@ function App() {
 				<Inicio></Inicio>
 			</Element>
 			<Element name={secciones.SOBRE_MI} className='element'> 
-				<SobreMi> </SobreMi>
+				<SobreMi></SobreMi>
 			 </Element>
 			<Element name={secciones.EXPERIENCIA} className='element'>
 				<Experiencia></Experiencia>
