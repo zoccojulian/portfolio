@@ -10,49 +10,49 @@ import { useExperienciaAnimation } from '../../../hooks/useExperienciaAnimation'
 const listaExperiencia = [
     {
         id:0,
-        foto: 'Codificador.png',
+        foto: '/img/experiencia/Codificador.png',
         nombre: 'Codificador de texto',
         tecno: ['Html', 'Css', 'Js'],
         descripcion: 'Codificador de texto'
     },
     {
         id:1,
-        foto: 'Ahorcado.png',
+        foto: '/img/experiencia/Ahorcado.png',
         nombre: 'Juego Ahorcado',
         tecno: ['Html', 'Css', 'Js'],
         descripcion: 'Juego Ahorcado'
     },
     {
         id:2,
-        foto: 'e-commerce.png',
+        foto: '/img/experiencia/e-commerce.png',
         nombre: 'Alura Geek - e-commerce',
         tecno: ['Html', 'Css', 'Js'],
         descripcion: 'Pagína de ventas de productos Geek'
     },
     {
         id:3,
-        foto: 'Conversor.png',
+        foto: '/img/experiencia/Conversor.png',
         nombre: 'Conversor',
         tecno: ['Java'],
         descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA'
     },
     {
         id:4,
-        foto: 'HotelAlura.png',
+        foto: '/img/experiencia/HotelAlura.png',
         nombre: 'Hotel Alura',
         tecno: ['Java', 'MySQL'],
         descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA'
     },
     {
         id:5,
-        foto: 'simina.jpg',
+        foto: '/img/experiencia/simina.jpg',
         nombre: 'Simina Shoes',
         tecno: ['Html', 'Sass', 'Js', 'Bodymovin'],
         descripcion: 'Página comercial realizada para venta de zapatos. Actualmente fuera de linea. '
     },
     {
         id:6,
-        foto: 'pagina_pokemon.jpg',
+        foto: '/img/experiencia/pagina_pokemon.jpg',
         nombre: 'Pokemon Page',
         tecno: ['ReactJs', 'Sass'],
         descripcion: 'Página Realizada con React, Sass para estilos, MUI para algunos componentes. Utilizando la API PokemonApi'
@@ -98,7 +98,20 @@ const Experiencia = () => {
                             animate={{opacity:1, transform: 'translateX(0%)'}}
                             exit={{opacity:0, transform: 'translateX(100%)'}}
                         >
-                            <button onClick={() => setSelectId(null)}> salir</button>
+                            <div className='seleccion__container'>
+                                <div className='seleccion__imagen'>
+                                    <img src={selectId.foto} style={{width:'100%'}}></img>
+                                </div>
+                                <div className='seleccion__descripcion'>
+                                    <h4>{selectId.nombre}</h4>
+                                    <p>{selectId.descripcion}</p>
+                                    <ul className='seleccion__tecno'>
+                                        {selectId.tecno.map((item, key) => (
+                                            <li>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
                                 
                         </motion.div>
                     )}

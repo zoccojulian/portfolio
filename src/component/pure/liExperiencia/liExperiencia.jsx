@@ -4,11 +4,6 @@ import { motion, useInView } from 'framer-motion';
 
 const LiExperiencia = ({experiencia, setSelectId, selectId}) => {
 
-    const {foto, nombre, tecno, descripcion} = experiencia;
-
-    const carpeta = '/img/experiencia/';
-    let direccionFoto = `"${carpeta}${foto}"`;
-
     const changeSelected = () => {
         console.log({...experiencia})
         setSelectId({...experiencia})
@@ -42,7 +37,7 @@ const LiExperiencia = ({experiencia, setSelectId, selectId}) => {
             layout
             onClick={ () => changeSelected() }
             className='liExperiencia'
-            style={{backgroundImage : `url(${direccionFoto})`}}
+            style={{backgroundImage : `url(${experiencia.foto})`}}
             variants={variants}
             animate={ visible == experiencia.nombre ? 'hidden' : 'visible'}
         >
