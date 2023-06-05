@@ -1,0 +1,61 @@
+.experiencia__seleccionada{
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 80%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .seleccion__container{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        width: 100%;
+
+        .seleccion__imagen{
+            width: 100%;
+        }
+
+        .seleccion__descripcion{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .seleccion__nombre{
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            .seleccion__links{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: .5rem;
+            }
+            .seleccion__texto{
+                font-size: 1.2rem;
+            }
+
+            .seleccion__tecno{
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                list-style: none;
+                font-size: 1.2rem;
+                
+            }
+        }
+
+    }
+
+}

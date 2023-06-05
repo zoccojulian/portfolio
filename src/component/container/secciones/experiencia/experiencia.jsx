@@ -6,6 +6,7 @@ import { motion , AnimatePresence, useInView} from 'framer-motion';
 import useIsInView from '../../../hooks/useIsInView';
 import { secciones } from '../../../../js/secciones';
 import { useExperienciaAnimation } from '../../../hooks/useExperienciaAnimation';
+import ExperienciaSeleccionada from '../../../pure/experienciaSeleccionada/experienciaSeleccionada';
 
 const listaExperiencia = [
     {
@@ -13,49 +14,63 @@ const listaExperiencia = [
         foto: '/img/experiencia/Codificador.png',
         nombre: 'Codificador de texto',
         tecno: ['Html', 'Css', 'Js'],
-        descripcion: 'Codificador de texto'
+        descripcion: 'Codificador de texto',
+        demo: 'https://zoccojulian.github.io/challenge-01-julian/',
+        repositorio: 'https://github.com/zoccojulian/challenge-01-julian'
     },
     {
         id:1,
         foto: '/img/experiencia/Ahorcado.png',
         nombre: 'Juego Ahorcado',
         tecno: ['Html', 'Css', 'Js'],
-        descripcion: 'Juego Ahorcado'
+        descripcion: 'Juego Ahorcado',
+        demo: 'https://zoccojulian.github.io/challenge-02-julian/',
+        repositorio: 'https://github.com/zoccojulian/challenge-02-julian'
     },
     {
         id:2,
         foto: '/img/experiencia/e-commerce.png',
         nombre: 'Alura Geek - e-commerce',
         tecno: ['Html', 'Css', 'Js'],
-        descripcion: 'Pagína de ventas de productos Geek'
+        descripcion: 'Pagína de ventas de productos Geek',
+        demo: 'https://zoccojulian.github.io/challenge-4-julian/',
+        repositorio: 'https://github.com/zoccojulian/challenge-4-julian'
     },
     {
         id:3,
         foto: '/img/experiencia/Conversor.png',
         nombre: 'Conversor',
         tecno: ['Java'],
-        descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA'
+        descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA',
+        demo: 'https://replit.com/@JulianZocco/Conversor#Main.java',
+        repositorio: 'https://github.com/zoccojulian/challenge-05-julian-Conversor-Java'
     },
     {
         id:4,
         foto: '/img/experiencia/HotelAlura.png',
         nombre: 'Hotel Alura',
         tecno: ['Java', 'MySQL'],
-        descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA'
+        descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA',
+        demo: 'https://www.youtube.com/watch?v=f8xODoraSI4',
+        repositorio: 'https://github.com/zoccojulian/Challenge-6-julian-HotelAlura'
     },
     {
         id:5,
         foto: '/img/experiencia/simina.jpg',
         nombre: 'Simina Shoes',
         tecno: ['Html', 'Sass', 'Js', 'Bodymovin'],
-        descripcion: 'Página comercial realizada para venta de zapatos. Actualmente fuera de linea. '
+        descripcion: 'Página comercial realizada para venta de zapatos. Actualmente fuera de linea. ',
+        demo: 'http://simina.zoccojulian.site/',
+        repositorio: null
     },
     {
         id:6,
         foto: '/img/experiencia/pagina_pokemon.jpg',
         nombre: 'Pokemon Page',
         tecno: ['ReactJs', 'Sass'],
-        descripcion: 'Página Realizada con React, Sass para estilos, MUI para algunos componentes. Utilizando la API PokemonApi'
+        descripcion: 'Página Realizada con React, Sass para estilos, MUI para algunos componentes. Utilizando la API PokemonApi',
+        demo: 'https://zoccojulian-pokemon-page.netlify.app/',
+        repositorio: 'https://github.com/zoccojulian/pokemon-page'
     }
 
 ]
@@ -91,29 +106,10 @@ const Experiencia = () => {
                 </motion.ul>
                 <AnimatePresence>
                     {selectId && (
-                        <motion.div
-                            className='experiencia__seleccionada'
-                            onClick={() => setSelectId(null)}
-                            initial={{opacity:0, transform: 'translateX(100%)'}}
-                            animate={{opacity:1, transform: 'translateX(0%)'}}
-                            exit={{opacity:0, transform: 'translateX(100%)'}}
-                        >
-                            <div className='seleccion__container'>
-                                <div className='seleccion__imagen'>
-                                    <img src={selectId.foto} style={{width:'100%'}}></img>
-                                </div>
-                                <div className='seleccion__descripcion'>
-                                    <h4>{selectId.nombre}</h4>
-                                    <p>{selectId.descripcion}</p>
-                                    <ul className='seleccion__tecno'>
-                                        {selectId.tecno.map((item, key) => (
-                                            <li>{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                                
-                        </motion.div>
+                        <ExperienciaSeleccionada 
+                            selectId={selectId}
+                            setSelectId={setSelectId}
+                        ></ExperienciaSeleccionada>
                     )}
                 </AnimatePresence>
                 
