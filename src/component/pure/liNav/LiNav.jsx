@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSeccion } from '../../../store/slices/seccionSlice';
 import { motion } from 'framer-motion';
@@ -17,12 +17,9 @@ const scrollType = {
 const LiNav = ( { nombre, link } ) => {
 
     const enSeccion = useSelector ( ( state ) => state.secciones.seccion )
-    const dispatch = useDispatch();
 
     const irASeccion = () => {
-        // dispatch( setSeccion(link) )
         scroller.scrollTo(link, scrollType);
-        
     }
 
     const variants = {
@@ -41,8 +38,6 @@ const LiNav = ( { nombre, link } ) => {
           }
         }
       };
-
-
 
     return (
         <motion.li 

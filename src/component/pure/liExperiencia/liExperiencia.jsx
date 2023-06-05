@@ -1,6 +1,6 @@
-import React, { useEffect , useState } from 'react';
+import React, { useEffect , useState , useRef} from 'react';
 import './liExperiencia.scss';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 const LiExperiencia = ({experiencia, setSelectId, selectId}) => {
 
@@ -54,3 +54,11 @@ const LiExperiencia = ({experiencia, setSelectId, selectId}) => {
 }
 
 export default LiExperiencia;
+
+
+
+
+
+// style={{backgroundImage : `url(${direccionFoto})`, transform: isInView ? "none" : "translateX(-200px)",
+// opacity: isInView ? 1 : 0,
+// transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"}}

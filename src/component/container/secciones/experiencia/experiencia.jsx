@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import './experiencia.scss';
 import TituloSeccion from '../../../pure/tituloSeccion/tituloSeccion';
 import LiExperiencia from '../../../pure/liExperiencia/liExperiencia';
-import { motion , AnimatePresence} from 'framer-motion';
+import { motion , AnimatePresence, useInView} from 'framer-motion';
 import useIsInView from '../../../hooks/useIsInView';
 import { secciones } from '../../../../js/secciones';
+import { useExperienciaAnimation } from '../../../hooks/useExperienciaAnimation';
 
 const listaExperiencia = [
     {
@@ -67,17 +68,27 @@ const Experiencia = () => {
 
     const [selectId, setSelectId] = useState(null)
 
+    
+
+    const scope = useExperienciaAnimation()
 
     return (
-        <motion.section className='experiencia' ref={referencia}>
+        <motion.section 
+            className='experiencia'
+            ref={referencia}
+        >
             <TituloSeccion titulo='Experiencia' ></TituloSeccion>
-            <div className='experiencia__container'>
-                <ul className='experiencia__lista'>
+            <motion.div 
+                className='experiencia__container'
+            >
+                <motion.ul 
+                    className='experiencia__lista'
+                    ref={scope}
+                >
                 {listaReverse.map((li, key) => (
                     <LiExperiencia experiencia={li} key={key} setSelectId={setSelectId} selectId={selectId}></LiExperiencia>
                 ))}
-                    
-                </ul>
+                </motion.ul>
                 <AnimatePresence>
                     {selectId && (
                         <motion.div
@@ -94,7 +105,7 @@ const Experiencia = () => {
                 </AnimatePresence>
                 
                 
-            </div>
+            </motion.div>
         </motion.section>
     );
 }
