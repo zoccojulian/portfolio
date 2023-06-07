@@ -2,13 +2,25 @@
     position: fixed;
     top: 10%;
     left: 5%;
-    width: 90%;
-    height: 80%;
+    width: 90vw;
+    height: 80vh;
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 20px 20px 20px 0;
+
+    .experiencia__seleccionada-cerrar{
+        position: absolute;
+        right: 20px;
+        top: 8px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 2.2rem;
+        color: white;
+        cursor: pointer;
+    
+    }
 
 
     .seleccion__container{
@@ -16,10 +28,13 @@
         display: flex;
         flex-direction: column;
         color: white;
-        width: 100%;
-
         .seleccion__imagen{
             width: 100%;
+
+            img{
+                width: 100%;
+                aspect-ratio: 16 / 9;
+            }
         }
 
         .seleccion__descripcion{
@@ -37,6 +52,9 @@
                 align-items: center;
                 gap: 1rem;
                 margin-bottom: .5rem;
+                .seleccion__dir{
+                    text-decoration: none;
+                }
             }
             .seleccion__texto{
                 font-size: 1.2rem;
@@ -52,10 +70,80 @@
                 align-items: center;
                 list-style: none;
                 font-size: 1.2rem;
+                margin: .5rem 0 0 0;
                 
             }
         }
 
     }
 
+}
+
+@media (orientation: landscape) {
+
+    .experiencia__seleccionada{
+
+        .seleccion__container{
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .seleccion__imagen{
+                width: 50%;
+            }
+
+            .seleccion__descripcion{
+                width: 40%;
+                padding-left: 1rem;
+                align-items: flex-start;
+                .seleccion__nombre{
+                    margin-bottom: .5rem;
+                }
+                .seleccion__links{
+
+                }
+                .seleccion__texto{
+
+                }
+    
+                .seleccion__tecno{
+                    justify-content: flex-start;
+                    
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .experiencia__seleccionada{
+
+        .seleccion__container{
+
+            // .seleccion__imagen{
+    
+            // }
+
+            .seleccion__descripcion{
+
+                .seleccion__nombre{
+                   font-size: 2.2rem;
+                }
+                .seleccion__links{
+                    font-size: 2rem;
+                }
+                .seleccion__texto{
+                    font-size: 1.8rem;
+                }
+    
+                .seleccion__tecno{
+                    font-size: 2rem;
+                    
+                }
+            }
+
+        }
+    }
 }

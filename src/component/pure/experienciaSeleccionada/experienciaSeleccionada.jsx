@@ -7,15 +7,18 @@ const ExperienciaSeleccionada = ( { selectId , setSelectId } ) => {
     return (
         <motion.div
             className='experiencia__seleccionada'
-            onClick={() => setSelectId(null)}
+            
             initial={{ opacity: 0, transform: 'translateX(100%)' }}
             animate={{ opacity: 1, transform: 'translateX(0%)' }}
             exit={{ opacity: 0, transform: 'translateX(100%)' }}
         >
+            <span 
+                className='experiencia__seleccionada-cerrar'
+                onClick={() => setSelectId(null)}
+            >x</span>
             <div className='seleccion__container'>
-                
                 <div className='seleccion__imagen'>
-                    <img src={selectId.foto} style={{ width: '100%' }}></img>
+                    <img src={selectId.foto}></img>
                 </div>
                 <div className='seleccion__descripcion'>
                     <h4 className='seleccion__nombre' >{selectId.nombre}</h4>
