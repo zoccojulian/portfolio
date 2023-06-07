@@ -116,7 +116,40 @@
     }
 }
 
-@media only screen and (min-width: 768px) {
+// @media (orientation: portrait) and (min-width: 768){
+
+//     .experiencia__seleccionada{
+
+//         .seleccion__container{
+
+//             // .seleccion__imagen{
+    
+//             // }
+
+//             .seleccion__descripcion{
+
+//                 .seleccion__nombre{
+//                    font-size: 2.2rem;
+//                 }
+//                 .seleccion__links{
+//                     font-size: 2rem;
+//                 }
+//                 .seleccion__texto{
+//                     font-size: 1.8rem;
+//                 }
+    
+//                 .seleccion__tecno{
+//                     font-size: 2rem;
+                    
+//                 }
+//             }
+
+//         }
+//     }
+// }
+
+
+@media only screen and (min-width: 996px), (orientation: portrait) and (min-width: 768px) {
 
     .experiencia__seleccionada{
 
