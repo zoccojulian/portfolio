@@ -13,11 +13,14 @@ $color1: #22aaa1ff;
 $color1b: rgb(7, 129, 120);
 $color1c: rgb(139, 237, 230);
 $color2: #393e41ff;
+$color2-t:rgba(57, 62, 65, 0.893);
 $color3: #989992ff;
 $color4: #ecf0f1ff;
+$color4-t: rgba(236, 240, 241, 0.89);
 $color5: #0075f2ff;
 $color6: #d3d0cbff;
 $color7: rgba(236, 240, 241, 0.436);
+
 
 .theme{
 
@@ -28,6 +31,8 @@ $color7: rgba(236, 240, 241, 0.436);
     --color__fondo-sobreMi: #{$color4};
     --color__hobbie : #{$color3};
     --color__hobbie-selecionado :#{$color1b};
+    --color__secundario-t: #{$color2-t};
+
 
     &--dark{
 
@@ -38,6 +43,6 @@ $color7: rgba(236, 240, 241, 0.436);
         --color__fondo-sobreMi: #{$color1b};
         --color__hobbie : #{$color2};
         --color__hobbie-selecionado :#{$color4};
-
+        --color__secundario-t: #{$color4-t};
     }
 }

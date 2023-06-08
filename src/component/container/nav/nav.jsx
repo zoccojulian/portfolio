@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import LiNav from '../../pure/liNav/LiNav';
 import { secciones } from '../../../js/secciones';
 import ButtonHamburguer from '../../pure/hamburguer/buttonHamburguer';
@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 
 //Style
 import './nav.scss';
+import { useSelector } from 'react-redux';
 
 const breakPoint = 992;
 

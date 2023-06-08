@@ -13,13 +13,34 @@ const SobreMi = () => {
 
     const { referencia } = useIsInView(secciones.SOBRE_MI, secciones.INICIO)
 
+    const textoRef = useRef(null)
+    const textoView = useInView(textoRef)
+
+    const variants_texto = {
+        visible:{
+            opacity:1
+        },
+        hidden:{
+            opacity:0
+        }
+    }
+
     return (
         <motion.section className='sobreMi'
             ref={referencia}
         >
             <TituloSeccion titulo='Sobre Mi' ></TituloSeccion>
-            <div className='sobreMi__texto-container'>
-                <p className='sobreMi__texto'>Luego de concluir el bootcamp
+            <motion.div
+                className='sobreMi__texto-container'
+            >
+                <motion.p
+                    className='sobreMi__texto'
+                    ref={textoRef}
+                    variants={variants_texto}
+                    animate={ textoView ? 'visible' : 'hidden' }
+                    transition={{duration:1, delay: 0.3}}
+                    
+                >Luego de concluir el bootcamp
                     Oracle One Next Education, seguí
                     mis estudios orientados a Front End
                     con React Js. Desarrollé proyectos
@@ -28,9 +49,9 @@ const SobreMi = () => {
                     Actualmente me encuentro
                     cursando en Argentina programa
                     Python orientado a Ciencia de Datos.
-                </p>
+                </motion.p>
                 <Hobbies></Hobbies>
-            </div>
+            </motion.div>
         </motion.section>
     );
 }

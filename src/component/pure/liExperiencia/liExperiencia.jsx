@@ -5,7 +5,6 @@ import { motion, useInView } from 'framer-motion';
 const LiExperiencia = ({experiencia, setSelectId, selectId}) => {
 
     const changeSelected = () => {
-        console.log({...experiencia})
         setSelectId({...experiencia})
     }
 
@@ -28,7 +27,6 @@ const LiExperiencia = ({experiencia, setSelectId, selectId}) => {
             setVisible(null)
         }
 
-        console.log(visible)
 
     }, [selectId])
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './hobbies.scss';
-import { motion , AnimatePresence} from 'framer-motion';
+import { motion , AnimatePresence, useInView} from 'framer-motion';
 
 import PoolIcon from '@mui/icons-material/Pool';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
@@ -12,6 +12,20 @@ import LiHobbie from '../../pure/liHobbie/liHobbie';
 
 
 const Hobbies = () => {
+
+    const hobbieRef = useRef(null)
+    const hobbieView = useInView(hobbieRef)
+
+    const variantsHobbie = {
+        visible:{
+            transform: 'translateX(0%)',
+            opacity:1
+        },
+        hidden:{
+            transform: 'translateX(100%)',
+            opacity:0
+        }
+    }
 
     const listaIcons = [
         {nombre: 'Natación', icon: <PoolIcon className='mui__icon' ></PoolIcon>},
@@ -48,8 +62,18 @@ const Hobbies = () => {
         }
     },[])
 
+    useEffect(() => {
+        console.log(hobbieView)
+    },[hobbieView])
+
     return (
-        <div className='hobbies__container'>
+        <motion.div
+            className='hobbies__container'
+            variants={variantsHobbie}
+            animate={hobbieView ? 'visible' : 'hidden'}
+            transition={{duration: 1, delay: 0.3}}
+            ref={hobbieRef}
+        >
             <h3 className='hobbies__titulo'>Hobbies</h3>
             <div className='hobbie__lista-container'> 
                 <ul className='hobbies__lista'>
@@ -72,7 +96,7 @@ const Hobbies = () => {
 
             </div>
             
-        </div>
+        </motion.div>
     );
 }
 
