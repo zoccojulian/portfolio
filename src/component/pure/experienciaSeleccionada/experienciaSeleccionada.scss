@@ -39,6 +39,7 @@
                 aspect-ratio: 16 / 9;
                 border-radius: 20px 20px 20px 0;
                 filter: drop-shadow(3px 3px 8px var(--color__primario));
+                transition: filter var(--transition_color);
                 
             }
         }
@@ -71,6 +72,8 @@
                     border-radius: 8px;
                     font-size: 1rem;
                     font-family: var(--font_secundaria);
+                    transition: background-color var(--transition_color), color var(--transition_color);
+                    
                     &:link {
                         color: var(--color__hobbie-selecionado);
                     }

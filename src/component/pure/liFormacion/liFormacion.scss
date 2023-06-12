@@ -1,0 +1,23 @@
+.liFormacion{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    .liFormacion__foto-container{
+        margin: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        // background-color: white;
+        // border-radius: 20px 20px 20px 0;
+        img{
+            width: 50%;
+        }
+    }
+    .liFormacion__texto-container{
+        width: 100%;
+    }
+}

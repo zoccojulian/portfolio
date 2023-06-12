@@ -1,0 +1,23 @@
+.formacion{
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color__fondo-formacion);
+    padding: 3rem;
+    transition: background-color var(--transition_color);
+
+    .formación__lista-container{
+        width: 100%;
+        .formacion__lista{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+        }
+    }
+}
