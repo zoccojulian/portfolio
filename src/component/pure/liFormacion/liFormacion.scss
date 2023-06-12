@@ -7,17 +7,23 @@
     .liFormacion__foto-container{
         margin: 0;
         width: 100%;
+        height: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
-        // background-color: white;
-        // border-radius: 20px 20px 20px 0;
+        background-color: white;
+        position: relative;
+        border-radius: 50px 0 50px 0;
+ 
         img{
-            width: 50%;
+            max-height: 200px;
+            height: 100%;
+            padding: 1rem;
         }
     }
     .liFormacion__texto-container{
         width: 100%;
+        margin-top: .5rem;
     }
 }
