@@ -3,6 +3,8 @@ import './liFormacion.scss';
 
 const LiFormacion = ( { formacion } ) => {
 
+    const {institucion} = formacion;
+
     return (
         <li className='liFormacion'>
             <div className='liFormacion__foto-container'>
@@ -10,8 +12,8 @@ const LiFormacion = ( { formacion } ) => {
             </div>
             <div className='liFormacion__texto-container'>
                 <h4 className='liformacion__texto-titulo'>{ formacion.titulo }</h4>
-                <span className='liformacion__texto-intitucion'>{ formacion.institucion }</span>
-                <span className='liformacion__texto-periodo'>{ formacion.periodo }</span>
+                <h5 className='liformacion__texto-institucion'>{ formacion.institucion }</h5>
+                <h5 className='liformacion__texto-periodo'>{ formacion.periodo }</h5>
             </div>
         </li>
     );

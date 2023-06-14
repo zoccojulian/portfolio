@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './formacion.scss';
 import TituloSeccion from '../../../pure/tituloSeccion/tituloSeccion';
 import useIsInView from '../../../hooks/useIsInView';
 import { secciones } from '../../../../js/secciones';
 import LiFormacion from '../../../pure/liFormacion/liFormacion';
+import { useAnimate, useInView , stagger, motion} from 'framer-motion';
 
 const listaFormacion = [
     {
@@ -36,7 +37,28 @@ const listaFormacion = [
     }
 ]
 
+const listaReverse = listaFormacion.reverse();
+
+
 const Formacion = () => {
+
+    const [scope, animate] = useAnimate();
+    const isInView = useInView(scope)
+
+    useEffect(() => {
+        
+        animate(
+            ".liFormacion__foto-container",
+            isInView
+              ? { opacity: 1, scale: [0,1.2,1] }
+              : { opacity: 0, scale: 0 },
+            {
+              duration: 0.4,
+              delay: isInView ? stagger(0.3, { startDelay: 0.15 }) : 0
+            }
+          );
+
+    }, [isInView])
 
     const { referencia } = useIsInView(secciones.FORMACION, secciones.EXPERIENCIA);
 
@@ -49,13 +71,14 @@ const Formacion = () => {
             <div
                 className='formación__lista-container'
             >
-                <ul
+                <motion.ul
+                    ref={scope}
                     className='formacion__lista'
                 >
-                    { listaFormacion.map( ( formacion, key ) => (
+                    { listaReverse.map( ( formacion, key ) => (
                         <LiFormacion formacion={formacion} ></LiFormacion>
                     ) ) }
-                </ul>
+                </motion.ul>
             </div>
         </section>
     );
