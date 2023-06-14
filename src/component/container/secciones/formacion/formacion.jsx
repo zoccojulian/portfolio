@@ -42,6 +42,8 @@ const listaReverse = listaFormacion.reverse();
 
 const Formacion = () => {
 
+    const { referencia } = useIsInView(secciones.FORMACION, secciones.EXPERIENCIA);
+
     const [scope, animate] = useAnimate();
     const isInView = useInView(scope)
 
@@ -54,13 +56,23 @@ const Formacion = () => {
               : { opacity: 0, scale: 0 },
             {
               duration: 0.4,
-              delay: isInView ? stagger(0.3, { startDelay: 0.15 }) : 0
+              delay: isInView ? stagger(0.5, { startDelay: 0.15 }) : 0
             }
           );
 
-    }, [isInView])
+          animate(
+            ".liFormacion__textos",
+            isInView
+              ? { opacity: 1, transform: 'translateX(0%)'}
+              : { opacity: 0, transform: 'translateX(-100%)'},
+            {
+              duration: 0.4,
+              delay: isInView ? stagger(0.2, { startDelay: 0.5 }) : 0
+            }
+          );
 
-    const { referencia } = useIsInView(secciones.FORMACION, secciones.EXPERIENCIA);
+
+    }, [isInView])
 
     return (
         <section 

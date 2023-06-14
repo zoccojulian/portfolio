@@ -11,9 +11,9 @@ const LiFormacion = ( { formacion } ) => {
                 <img src={formacion.foto}></img>
             </div>
             <div className='liFormacion__texto-container'>
-                <h4 className='liformacion__texto-titulo'>{ formacion.titulo }</h4>
-                <h5 className='liformacion__texto-institucion'>{ formacion.institucion }</h5>
-                <h5 className='liformacion__texto-periodo'>{ formacion.periodo }</h5>
+                <h4 className='liformacion__texto-titulo liFormacion__textos'>{ formacion.titulo }</h4>
+                <h5 className='liformacion__texto-institucion liFormacion__textos'>{ formacion.institucion }</h5>
+                <h5 className='liformacion__texto-periodo liFormacion__textos'>{ formacion.periodo }</h5>
             </div>
         </li>
     );

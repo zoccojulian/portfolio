@@ -12,6 +12,7 @@ import { useScroll , useMotionValueEvent } from 'framer-motion';
 import { setIsUp, setScroll } from './store/slices/scrollSlice';
 import Experiencia from './component/container/secciones/experiencia/experiencia';
 import Formacion from './component/container/secciones/formacion/formacion';
+import Skills from './component/container/secciones/skills/skills';
 
 function App() {	
 
@@ -49,6 +50,9 @@ function App() {
 			</Element>
 			<Element name={secciones.FORMACION} className='element'>
 				<Formacion></Formacion>
+			</Element>
+			<Element name={secciones.SKILLS} className='element'>
+				<Skills></Skills>
 			</Element>
 		</div>
 	);
