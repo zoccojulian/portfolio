@@ -34,4 +34,4 @@ const HtlmIcon = ({width='100px', height='100%'}) => {
     );
 }
 
-export default HtlmIcon;
+export { HtlmIcon };

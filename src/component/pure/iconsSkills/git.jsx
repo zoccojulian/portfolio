@@ -30,4 +30,4 @@ const Git = ({width='100px', height='100%'}) => {
     );
 }
 
-export default Git;
+export { Git };

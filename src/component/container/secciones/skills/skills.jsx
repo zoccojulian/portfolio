@@ -3,19 +3,20 @@ import TituloSeccion from '../../../pure/tituloSeccion/tituloSeccion';
 import './skills.scss';
 import { secciones } from '../../../../js/secciones';
 import useIsInView from '../../../hooks/useIsInView';
-import CssIcon from '../../../pure/iconsSkills/cssIcon';
-import HtlmIcon from '../../../pure/iconsSkills/htlmIcon';
-import Git from '../../../pure/iconsSkills/git';
-import GitHub from '../../../pure/iconsSkills/gitHub';
-import Java from '../../../pure/iconsSkills/java';
 
+import { CssIcon, HtlmIcon, JsIcon, Java, Git, GitHub, MySQLIcon, SassIcon, ReactIcon } from '../../../pure/iconsSkills'
+ 
 
 const lista = [
-    {nombre: 'Css', icon: <CssIcon ></CssIcon>},
     {nombre: 'Html', icon: <HtlmIcon></HtlmIcon>},
+    {nombre: 'Css', icon: <CssIcon ></CssIcon>},
+    {nombre: 'Sass', icon: <SassIcon></SassIcon>},
+    {nombre: 'JavaScript', icon: <JsIcon></JsIcon>},
+    {nombre: 'ReactJs', icon: <ReactIcon></ReactIcon>},
+    {nombre: 'Java', icon: <Java></Java>},
+    {nombre: 'MySQL', icon: <MySQLIcon></MySQLIcon>},
     {nombre: 'Git', icon: <Git></Git>},
-    {nombre: 'GitHub', icon: <GitHub></GitHub>},
-    {nombre: 'Java', icon: <Java></Java>}
+    {nombre: 'GitHub', icon: <GitHub></GitHub>}
 ]
 
 const Skills = () => {
@@ -35,7 +36,7 @@ const Skills = () => {
         <section className='skills' ref={ referencia }>
             <TituloSeccion titulo='Skills'></TituloSeccion>
             <div className='skills__container'>
-                <ul style={{listStyle:'none', display:'flex', flexDirection:'row'}} >
+                <ul style={{listStyle:'none', display:'flex', flexDirection:'row', flexWrap:'wrap'}} >
                     {lista.map((componente, key) => 
                         <li key={key}
                             style={{color: hover == key ? 'red' : 'white' , transition: 'all .5s'}}

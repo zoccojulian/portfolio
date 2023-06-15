@@ -105,4 +105,4 @@ const Java= ({width='100px', height='100%'}) => {
     );
 }
 
-export default Java;
+export { Java };

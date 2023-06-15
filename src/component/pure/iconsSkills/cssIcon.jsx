@@ -48,4 +48,4 @@ const CssIcon = ({width='100px', height='100%'}) => {
     );
 }
 
-export default CssIcon;
+export { CssIcon };

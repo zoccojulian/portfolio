@@ -31,4 +31,4 @@ const GitHub = ({width='100px', height='100%'}) => {
     );
 }
 
-export default GitHub;
+export { GitHub };
