@@ -27,7 +27,7 @@ const ListaSkills = ({ lista , nombre }) => {
                     <li key={key}
                         className='lista__skills-item'
                         style={{ 
-                            color: hover == key ? 'red' : 'var(--color__hobbie-selecionado)',
+                            color: hover == key ? 'var(--color__skill-seleccionado)' : 'var(--color__skill)',
                             transition: 'all .5s'
                         }}
                         
@@ -37,6 +37,7 @@ const ListaSkills = ({ lista , nombre }) => {
                         <motion.div 
                             className='item__background'
                             animate ={ hover == key ? {transform: 'translateY(0px)', visibility:'visible', opacity:1} : {transform: 'translateY(-20px)', visibility:'hidden', opacity:0}}
+                            transition={{duration: .5}}
                         ></motion.div>
                         <motion.div 
                             className='skillIcon__container'
@@ -49,7 +50,7 @@ const ListaSkills = ({ lista , nombre }) => {
                         <motion.div
                             layout
                             className='item__nombre-container'
-                            animate ={ hover == key ? {transform: 'translateX(0px)', visibility:'visible'} : {transform: 'translateX(50px)', visibility:'hidden'}}
+                            animate ={ hover == key ? {transform: 'translateX(0px)', visibility:'visible', opacity:1} : {transform: 'translateX(50px)', visibility:'hidden', opacity:0}}
                             transition={{duration: .5}}
                         >
                             <span className='item__nombre'>{ componente.nombre }</span>

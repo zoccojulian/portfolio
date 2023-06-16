@@ -11,10 +11,13 @@
 
 $color1: #22aaa1ff;
 $color1b: rgb(7, 129, 120);
-$color1c: rgb(139, 237, 230);
+// $color1c: rgb(139, 237, 230);
+$color1c: rgba(7, 129, 121, 0.176);
 $color2: #393e41ff;
 $color2-t:rgba(57, 62, 65, 0.893);
+$color2-t2:rgba(57, 62, 65, 0.571);
 $color3: #989992ff;
+$color3-t: rgba(152, 153, 146, 0.231);
 $color4: #ecf0f1ff;
 $color4-t: rgba(236, 240, 241, 0.89);
 $color5: rgb(3, 65, 130);
@@ -35,6 +38,9 @@ $color7: rgba(236, 240, 241, 0.436);
     --color__hobbie : #{$color3};
     --color__hobbie-selecionado :#{$color1b};
     --color__secundario-t: #{$color2-t};
+    --color__skill: #{$color2-t2};
+    --color__skill-seleccionado: #{$color1b};
+    --color__skill-fondo: #{$color3-t};
 
 
     &--dark{
@@ -48,5 +54,8 @@ $color7: rgba(236, 240, 241, 0.436);
         --color__hobbie : #{$color2};
         --color__hobbie-selecionado :#{$color4};
         --color__secundario-t: #{$color4-t};
+        --color__skill: #{$color3};
+        --color__skill-seleccionado: #{$color4};
+        --color__skill-fondo: #{$color1b};
     }
 }

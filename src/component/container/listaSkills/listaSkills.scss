@@ -16,7 +16,8 @@
     }
 
     .lista__skills{
-        padding: 0;
+        padding-left: 0;
+        padding-top: 1rem;
         margin: 0;
         list-style: none;
         display: flex;
@@ -32,16 +33,12 @@
             position: relative;
             width: 120px;
             height: 120px;
-            // border: 1px solid white;
             
             .skillIcon__container{
                 position: absolute;
                 left: calc(50% - 50px);
                 top: calc(50% - 60px);
-
                 z-index: 1;
-                
-
                 .skillIcon{
                     width: 100px;
                 }
@@ -54,7 +51,7 @@
                 bottom: 0;
                 width: 130px;
                 height: 100px;
-                background-color: grey;
+                background-color: var(--color__skill-fondo);
                 border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
             }
 
@@ -70,9 +67,10 @@
                 align-items: center;
 
                 .item__nombre{
-                    color: var(--color__hobbie-selecionado);
+                    color: var(var(--color__skill-seleccionado));
                     font-size: 1.5rem;
                     font-family: var(--font_secundaria);
+                    font-weight: 700;
 
                 }
             }
