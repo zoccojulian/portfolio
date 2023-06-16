@@ -23,38 +23,57 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
-        
+        gap: 2rem;
         .lista__skills-item{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             position: relative;
+            width: 120px;
+            height: 120px;
+            // border: 1px solid white;
             
+            .skillIcon__container{
+                position: absolute;
+                left: calc(50% - 50px);
+                top: calc(50% - 60px);
 
-            .skillIcon{
-                width: 100px;
                 z-index: 1;
+                
+
+                .skillIcon{
+                    width: 100px;
+                }
             }
+
+
 
             .item__background{
                 position: absolute;
+                bottom: 0;
                 width: 130px;
                 height: 100px;
-                left: 50px;
                 background-color: grey;
                 border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
             }
 
             .item__nombre-container{
-                padding: 0.5rem;
+                position: absolute;
+                left: calc(50% - 100px);
+                bottom: 0;
+                // padding: 0.5rem;
                 z-index: 1;
+                width: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 .item__nombre{
                     color: var(--color__hobbie-selecionado);
                     font-size: 1.5rem;
                     font-family: var(--font_secundaria);
+
                 }
             }
         }
