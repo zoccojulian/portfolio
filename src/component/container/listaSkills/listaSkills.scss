@@ -10,6 +10,7 @@
            font-size: 2.3rem;
            font-family: var(--font_secundaria);
            font-weight: 300;
+           transition: color var(--transition_color);
 
         }
     }
@@ -25,9 +26,36 @@
         gap: 1rem;
         
         .lista__skills-item{
-            width: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            
+
             .skillIcon{
-                width: 100%;
+                width: 100px;
+                z-index: 1;
+            }
+
+            .item__background{
+                position: absolute;
+                width: 130px;
+                height: 100px;
+                left: 50px;
+                background-color: grey;
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+            }
+
+            .item__nombre-container{
+                padding: 0.5rem;
+                z-index: 1;
+
+                .item__nombre{
+                    color: var(--color__hobbie-selecionado);
+                    font-size: 1.5rem;
+                    font-family: var(--font_secundaria);
+                }
             }
         }
     }
