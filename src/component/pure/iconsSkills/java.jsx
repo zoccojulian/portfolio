@@ -1,16 +1,18 @@
 import React from 'react';
 
-const Java= ({width='100px', height='100%'}) => {
+const Java= ({ style }) => {
     return (
         <svg version="1.1" 
         id="Layer_1" 
         xmlns="http://www.w3.org/2000/svg" 
         x="0px" 
         y="0px"
-        width={width}
-        height={height}
+        width='100%'
+        height='100%'
+        style={style}
         viewBox="0 0 51.25 62" 
         enable-background="new 0 0 51.25 62" 
+		className='skillIcon'
         >
         <g>
         <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M18.463,22.485c0.045-0.288,0.09-0.576,0.135-0.864

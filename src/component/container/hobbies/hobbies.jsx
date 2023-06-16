@@ -62,9 +62,9 @@ const Hobbies = () => {
         }
     },[])
 
-    useEffect(() => {
-        console.log(hobbieView)
-    },[hobbieView])
+    // useEffect(() => {
+    //     console.log(hobbieView)
+    // },[hobbieView])
 
     return (
         <motion.div

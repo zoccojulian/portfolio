@@ -1,16 +1,18 @@
 import React from 'react';
 
-const GitHub = ({width='100px', height='100%'}) => {
+const GitHub = ({ style }) => {
     return (
         <svg version="1.1" 
         id="Layer_1" 
         xmlns="http://www.w3.org/2000/svg" 
         x="0px" 
         y="0px"
-        width={width}
-        height={height}
+        width='100%'
+        height='100%'
+        style={style}
         viewBox="0 0 51.25 62" 
         enable-background="new 0 0 51.25 62" 
+        className='skillIcon'
         >
         <g>
             <path fill-rule="evenodd" clip-rule="evenodd" fill='currentColor' d="M20.028,49.071c0,1.572,0.056,3.055-0.02,4.531

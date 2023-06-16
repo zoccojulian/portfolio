@@ -7,3 +7,7 @@ export { JsIcon } from './jsIcon';
 export { MySQLIcon } from './mySQLIcon';
 export { SassIcon } from './sassIcon';
 export { ReactIcon } from './reactIcon';
+export { PremiereIcon } from './premireIcon';
+export { PhotoshopIcon } from './photoshopIcon';
+export { AdobeAfterEffectIcon  } from './afterEffectIcon';
+export { IllustratorIcon } from './illustratorIcon';

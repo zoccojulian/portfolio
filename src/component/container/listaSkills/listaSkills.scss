@@ -1,0 +1,38 @@
+
+.lista__skills-container{
+
+    .skills__nombre-container{
+        display: flex;
+        justify-content: center;
+
+        .skills__nombre{
+           color: var(--color__texto-principal);
+           font-size: 2.3rem;
+           font-family: var(--font_secundaria);
+           font-weight: 300;
+
+        }
+    }
+
+    .lista__skills{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        
+        .lista__skills-item{
+            width: 100px;
+            .skillIcon{
+                width: 100%;
+            }
+        }
+    }
+
+
+}
+
+

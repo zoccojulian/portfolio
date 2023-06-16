@@ -88,7 +88,7 @@ const Formacion = () => {
                     className='formacion__lista'
                 >
                     { listaReverse.map( ( formacion, key ) => (
-                        <LiFormacion formacion={formacion} ></LiFormacion>
+                        <LiFormacion formacion={formacion} key={key}></LiFormacion>
                     ) ) }
                 </motion.ul>
             </div>

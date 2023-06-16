@@ -4,12 +4,13 @@ import './skills.scss';
 import { secciones } from '../../../../js/secciones';
 import useIsInView from '../../../hooks/useIsInView';
 
-import { CssIcon, HtlmIcon, JsIcon, Java, Git, GitHub, MySQLIcon, SassIcon, ReactIcon } from '../../../pure/iconsSkills'
+import { CssIcon, HtlmIcon, JsIcon, Java, Git, GitHub, MySQLIcon, SassIcon, ReactIcon, PremiereIcon, PhotoshopIcon, AdobeAfterEffectIcon, IllustratorIcon } from '../../../pure/iconsSkills'
+import ListaSkills from '../../listaSkills/listaSkills';
  
 
-const lista = [
+const listaSkillsDev = [
     {nombre: 'Html', icon: <HtlmIcon></HtlmIcon>},
-    {nombre: 'Css', icon: <CssIcon ></CssIcon>},
+    {nombre: 'Css', icon: <CssIcon></CssIcon>},
     {nombre: 'Sass', icon: <SassIcon></SassIcon>},
     {nombre: 'JavaScript', icon: <JsIcon></JsIcon>},
     {nombre: 'ReactJs', icon: <ReactIcon></ReactIcon>},
@@ -19,35 +20,29 @@ const lista = [
     {nombre: 'GitHub', icon: <GitHub></GitHub>}
 ]
 
+const listaSkillsRealizador = [
+    {nombre: 'Premiere', icon: <PremiereIcon></PremiereIcon>},
+    {nombre: 'Photoshop', icon: <PhotoshopIcon></PhotoshopIcon>},
+    {nombre: 'AfterEffect', icon: <AdobeAfterEffectIcon></AdobeAfterEffectIcon>},
+    {nombre: 'Illustrator', icon: <IllustratorIcon></IllustratorIcon>}
+]
+
 const Skills = () => {
 
     const { referencia } = useIsInView(secciones.SKILLS, secciones.FORMACION);
-
-    const [hover, setHover] = useState(null)
-
-    const cambio = ( estado ) => {
-        if(hover !== estado){
-            setHover(estado)
-        }
-            
-    }
 
     return (
         <section className='skills' ref={ referencia }>
             <TituloSeccion titulo='Skills'></TituloSeccion>
             <div className='skills__container'>
-                <ul style={{listStyle:'none', display:'flex', flexDirection:'row', flexWrap:'wrap'}} >
-                    {lista.map((componente, key) => 
-                        <li key={key}
-                            style={{color: hover == key ? 'red' : 'white' , transition: 'all .5s'}}
-                            onMouseOver={() => cambio(key)}
-                            onMouseLeave={() => cambio(null)}
-                        >
-                            {componente.icon}
-                        </li>
-                    )}
-                </ul>
-
+                <ListaSkills 
+                    lista={ listaSkillsDev }
+                    nombre= 'Desarrollo'
+                />
+                <ListaSkills
+                    lista = { listaSkillsRealizador }
+                    nombre = 'Audiovisual'
+                />
             </div>
         </section>
     );

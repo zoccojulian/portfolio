@@ -18,9 +18,9 @@ const TituloSeccion = ( { titulo } ) => {
         }
     }
 
-    useEffect(() => {
-       console.log(inView)
-    }, [inView])
+    // useEffect(() => {
+    //    console.log(inView)
+    // }, [inView])
 
     return (
         <motion.div
