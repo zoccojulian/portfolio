@@ -13,6 +13,7 @@ import { setIsUp, setScroll } from './store/slices/scrollSlice';
 import Experiencia from './component/container/secciones/experiencia/experiencia';
 import Formacion from './component/container/secciones/formacion/formacion';
 import Skills from './component/container/secciones/skills/skills';
+import Contacto from './component/container/secciones/contacto/contacto';
 
 function App() {	
 
@@ -53,6 +54,9 @@ function App() {
 			</Element>
 			<Element name={secciones.SKILLS} className='element'>
 				<Skills></Skills>
+			</Element>
+			<Element name={secciones.CONTACTO} className='element'>
+				<Contacto></Contacto>
 			</Element>
 		</div>
 	);

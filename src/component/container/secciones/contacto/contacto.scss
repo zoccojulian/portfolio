@@ -1,0 +1,26 @@
+.contacto{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: white;
+
+    .contacto__container{
+        width: 100%;
+        .contacto__formulario{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .contacto__formulario-box{
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+
+            }
+        }
+    }
+}
