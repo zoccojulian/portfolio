@@ -9,7 +9,6 @@ import { Button } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
 const emailFormat = (email) => {
-    console.log(email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/))
     return email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
 }
 
@@ -24,7 +23,6 @@ const Contacto = () => {
 
     const submit = (ev) => {
         ev.preventDefault()
-
         if(!errorInput.name.error && contacto.name.length >0 &&
             !errorInput.email.error && contacto.email.length >0 &&
             !errorInput.message.error && contacto.message.length >0
@@ -33,30 +31,20 @@ const Contacto = () => {
         
         }else {
 
-            let nuevoEstado = contacto;
+            let nuevoEstado = {...errorInput};
 
             if(contacto.name.length == 0){
                 nuevoEstado = {...nuevoEstado, name:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}};
             }
-            if(contacto.email.length == 0){
+            if(contacto.email.length == 0 ){
                 nuevoEstado = {...nuevoEstado, email:{error:true, texto:'El campo "Email" no puede quedar vacío'}};
             }
+
             if(contacto.message.length == 0){
                 nuevoEstado = {...nuevoEstado, message:{error:true, texto:'El campo "Mensaje" no puede quedar vacío'}};
             }
 
             setErrorInput({...nuevoEstado})
-
-            
-            // if(contacto.name.length == 0){
-            //     setErrorInput({...errorInput, name:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}})
-            // }
-            // if(contacto.email.length == 0){
-            //     setErrorInput({...errorInput, email:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}})
-            // }
-            // if(contacto.message.length == 0){
-            //     setErrorInput({...errorInput, message:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}})
-            // }
 
         }
     }
@@ -128,7 +116,7 @@ const Contacto = () => {
                             // id="outlined-password-input"
                             id= 'email'
                             label="Email"
-                            type="email"
+                            type="text"
                             fullWidth
                             value={ contacto.email }
                             onChange={handleNameChange}
