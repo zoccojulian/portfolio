@@ -39,10 +39,10 @@ const Contacto = () => {
                 nuevoEstado = {...nuevoEstado, name:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}};
             }
             if(contacto.email.length == 0){
-                nuevoEstado = {...nuevoEstado, email:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}};
+                nuevoEstado = {...nuevoEstado, email:{error:true, texto:'El campo "Email" no puede quedar vacío'}};
             }
             if(contacto.message.length == 0){
-                nuevoEstado = {...nuevoEstado, message:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}};
+                nuevoEstado = {...nuevoEstado, message:{error:true, texto:'El campo "Mensaje" no puede quedar vacío'}};
             }
 
             setErrorInput({...nuevoEstado})
