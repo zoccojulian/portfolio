@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import Footer from '../footer/footer';
 
 const emailFormat = (email) => {
     return email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
@@ -91,11 +92,12 @@ const Contacto = () => {
     return (
         <section className='contacto' ref={referencia}>
             <div className='contacto__container'>
-                <div className='contacto__img'>
-                    <img src={imagen} style={{ width: '100%' }}></img>
+                <div className='contacto__img' style={{backgroundImage:`url(${imagen})`}}>
+                    {/* <img src={imagen}></img> */}
                 </div>
 
                 <div className='contacto__formulario'>
+                    <h4 className='contacto__formulario-titulo'>Dejame un mensaje ...</h4>
                     <Box
                         component='form'
                         className='contacto__formulario-box'
@@ -111,6 +113,7 @@ const Contacto = () => {
                             onChange={handleNameChange}
                             error={errorInput.name.error}
                             helperText={errorInput.name.error ? errorInput.name.texto : ''}
+                            size='small'
                         />
                         <TextField
                             // id="outlined-password-input"
@@ -122,18 +125,20 @@ const Contacto = () => {
                             onChange={handleNameChange}
                             error={errorInput.email.error}
                             helperText={errorInput.email.error ? errorInput.email.texto : ''}
+                            size='small'
                         />
                         <TextField
                             // id="outlined-multiline-flexible"
                             id= 'message'
                             label="Mensaje"
                             multiline
-                            maxRows={4}
+                            maxRows={2}
                             fullWidth
                             value={ contacto.message }
                             onChange={handleNameChange}
                             error={errorInput.message.error}
                             helperText={errorInput.message.error ? errorInput.message.texto : ''}
+                            size='small'
                         />
                         <Button type='submit' variant="contained" endIcon={<SendIcon />}>
                             Enviar
@@ -141,6 +146,7 @@ const Contacto = () => {
                     </Box>
                 </div>
             </div>
+            <Footer></Footer>
         </section>
     );
 }
