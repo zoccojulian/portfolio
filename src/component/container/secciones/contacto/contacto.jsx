@@ -33,14 +33,12 @@ const Contacto = () => {
             !errorInput.email.error && contacto.email.length > 0 &&
             !errorInput.message.error && contacto.message.length > 0
         ) {
-            
 
             fetch("https://formsubmit.co/ajax/zoccojulian@gmail.com", {method : "POST",
             body: new FormData(ev.target)
             }).then((respuesta) => {
                 setIsEnviado(true)
-                setContacto(initialContacto)
-                setTimeout(() => { setIsEnviado(false) }, 4000)
+                setTimeout(() => { setContacto(initialContacto); setIsEnviado(false) }, 4000)
             }).catch((error) => alert(error));
 
         } else {
@@ -126,7 +124,6 @@ const Contacto = () => {
                             size='small'
                             name='name'
                             className='input'
-                            margin='1'
                         />
                         <TextField
                             // id="outlined-password-input"
@@ -173,7 +170,6 @@ const Contacto = () => {
                         animate={isEnviado ? 'send' : 'noSend'}
                         transition={{ duration: 0.5 }}
                     >
-
                         <motion.div
                             className='contacto__enviado-fondo'
                             variants={{
