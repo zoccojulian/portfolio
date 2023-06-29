@@ -8,45 +8,57 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import Footer from '../footer/footer';
+import { motion, transform } from 'framer-motion';
 
 const emailFormat = (email) => {
     return email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
 }
 
+const initialContacto = { name: '', email: '', message: '' };
 
 const Contacto = () => {
 
     const { referencia } = useIsInView(secciones.CONTACTO, secciones.SKILLS);
 
-    const [contacto, setContacto] = useState({name:'', email:'', message:''})
-    const [errorInput, setErrorInput] = useState({name:{error:false, texto:''}, email:{error:false, texto:''}, message:{error:false, texto: ''}})
+    const [contacto, setContacto] = useState(initialContacto)
+    const [errorInput, setErrorInput] = useState({ name: { error: false, texto: '' }, email: { error: false, texto: '' }, message: { error: false, texto: '' } })
 
+    const [isEnviado, setIsEnviado] = useState(false)
 
     const submit = (ev) => {
+
         ev.preventDefault()
-        if(!errorInput.name.error && contacto.name.length >0 &&
-            !errorInput.email.error && contacto.email.length >0 &&
-            !errorInput.message.error && contacto.message.length >0
-            ){
-                console.log('mensaje enviado')
-        
-        }else {
 
-            let nuevoEstado = {...errorInput};
+        if (!errorInput.name.error && contacto.name.length > 0 &&
+            !errorInput.email.error && contacto.email.length > 0 &&
+            !errorInput.message.error && contacto.message.length > 0
+        ) {
+            
 
-            if(contacto.name.length == 0){
-                nuevoEstado = {...nuevoEstado, name:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}};
+            fetch("https://formsubmit.co/ajax/zoccojulian@gmail.com", {method : "POST",
+            body: new FormData(ev.target)
+            }).then((respuesta) => {
+                setIsEnviado(true)
+                setContacto(initialContacto)
+                setTimeout(() => { setIsEnviado(false) }, 4000)
+            }).catch((error) => alert(error));
+
+        } else {
+
+            let nuevoEstado = { ...errorInput };
+
+            if (contacto.name.length == 0) {
+                nuevoEstado = { ...nuevoEstado, name: { error: true, texto: 'El campo "Nombre" no puede quedar vacío' } };
             }
-            if(contacto.email.length == 0 ){
-                nuevoEstado = {...nuevoEstado, email:{error:true, texto:'El campo "Email" no puede quedar vacío'}};
+            if (contacto.email.length == 0) {
+                nuevoEstado = { ...nuevoEstado, email: { error: true, texto: 'El campo "Email" no puede quedar vacío' } };
             }
 
-            if(contacto.message.length == 0){
-                nuevoEstado = {...nuevoEstado, message:{error:true, texto:'El campo "Mensaje" no puede quedar vacío'}};
+            if (contacto.message.length == 0) {
+                nuevoEstado = { ...nuevoEstado, message: { error: true, texto: 'El campo "Mensaje" no puede quedar vacío' } };
             }
 
-            setErrorInput({...nuevoEstado})
-
+            setErrorInput({ ...nuevoEstado })
         }
     }
 
@@ -55,34 +67,34 @@ const Contacto = () => {
         switch (ev.target.id) {
             case 'name':
                 let name = ev.target.value
-                setContacto({...contacto, name})
-                if(name.length == 0 && !errorInput.name.error){
-                    setErrorInput({...errorInput, name:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}})
-                } if (name.length > 0 && errorInput.name.error){
-                    setErrorInput({...errorInput, name:{error:false, texto:''}})
+                setContacto({ ...contacto, name })
+                if (name.length == 0 && !errorInput.name.error) {
+                    setErrorInput({ ...errorInput, name: { error: true, texto: 'El campo "Nombre" no puede quedar vacío' } })
+                } if (name.length > 0 && errorInput.name.error) {
+                    setErrorInput({ ...errorInput, name: { error: false, texto: '' } })
                 }
                 break;
             case 'email':
                 let email = ev.target.value
-                setContacto({...contacto, email})
-                if(email.length == 0){
-                    setErrorInput({...errorInput, email:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}})
-                }else if (email.length > 0 && !emailFormat(email)){
-                    setErrorInput({...errorInput, email:{error:true, texto:'no es un formato de email válido (ejemplo@gmail.com)'}})
-                    }else{
-                        setErrorInput({...errorInput, email:{error:false, texto:''}})
-                    }
+                setContacto({ ...contacto, email })
+                if (email.length == 0) {
+                    setErrorInput({ ...errorInput, email: { error: true, texto: 'El campo "Nombre" no puede quedar vacío' } })
+                } else if (email.length > 0 && !emailFormat(email)) {
+                    setErrorInput({ ...errorInput, email: { error: true, texto: 'no es un formato de email válido (ejemplo@gmail.com)' } })
+                } else {
+                    setErrorInput({ ...errorInput, email: { error: false, texto: '' } })
+                }
                 break;
             case 'message':
                 let message = ev.target.value
-                setContacto({...contacto, message})
-                if(message.length == 0 && !errorInput.message.error){
-                    setErrorInput({...errorInput, message:{error:true, texto:'El campo "Nombre" no puede quedar vacío'}})
-                } if (message.length > 0 && errorInput.message.error){
-                    setErrorInput({...errorInput, message:{error:false, texto:''}})
+                setContacto({ ...contacto, message })
+                if (message.length == 0 && !errorInput.message.error) {
+                    setErrorInput({ ...errorInput, message: { error: true, texto: 'El campo "Nombre" no puede quedar vacío' } })
+                } if (message.length > 0 && errorInput.message.error) {
+                    setErrorInput({ ...errorInput, message: { error: false, texto: '' } })
                 }
                 break;
-        
+
             default:
                 break;
         }
@@ -92,10 +104,8 @@ const Contacto = () => {
     return (
         <section className='contacto' ref={referencia}>
             <div className='contacto__container'>
-                <div className='contacto__img' style={{backgroundImage:`url(${imagen})`}}>
-                    {/* <img src={imagen}></img> */}
+                <div className='contacto__img' style={{ backgroundImage: `url(${imagen})` }}>
                 </div>
-
                 <div className='contacto__formulario'>
                     <h4 className='contacto__formulario-titulo'>Dejame un mensaje ...</h4>
                     <Box
@@ -109,41 +119,110 @@ const Contacto = () => {
                             label="Nombre"
                             type="text"
                             fullWidth
-                            value={ contacto.name }
+                            value={contacto.name}
                             onChange={handleNameChange}
                             error={errorInput.name.error}
                             helperText={errorInput.name.error ? errorInput.name.texto : ''}
                             size='small'
+                            name='name'
+                            className='input'
+                            margin='1'
                         />
                         <TextField
                             // id="outlined-password-input"
-                            id= 'email'
+                            id='email'
                             label="Email"
                             type="text"
                             fullWidth
-                            value={ contacto.email }
+                            value={contacto.email}
                             onChange={handleNameChange}
                             error={errorInput.email.error}
                             helperText={errorInput.email.error ? errorInput.email.texto : ''}
                             size='small'
+                            name='email'
                         />
                         <TextField
                             // id="outlined-multiline-flexible"
-                            id= 'message'
+                            id='message'
                             label="Mensaje"
                             multiline
                             maxRows={2}
                             fullWidth
-                            value={ contacto.message }
+                            value={contacto.message}
                             onChange={handleNameChange}
                             error={errorInput.message.error}
                             helperText={errorInput.message.error ? errorInput.message.texto : ''}
                             size='small'
+                            name='message'
                         />
                         <Button type='submit' variant="contained" endIcon={<SendIcon />}>
                             Enviar
                         </Button>
                     </Box>
+                    <motion.div
+                        className='contacto__enviado'
+                        variants={{
+                            send: {
+                                display: 'flex'
+                            },
+                            noSend: {
+                                display: 'none'
+                            }
+                        }}
+                        initial={{ display: 'none' }}
+                        animate={isEnviado ? 'send' : 'noSend'}
+                        transition={{ duration: 0.5 }}
+                    >
+
+                        <motion.div
+                            className='contacto__enviado-fondo'
+                            variants={{
+                                send: {
+                                    opacity: 1
+                                },
+                                noSend: {
+                                    opacity: 0
+                                }
+                            }}
+                            initial={{ opacity: 0 }}
+                            animate={isEnviado ? 'send' : 'noSend'}
+                            transition={{ duration: 1 }}
+                        ></motion.div>
+                        <motion.div 
+                            className='contacto__enviado-icon'
+                            variants={{
+                                send: {
+                                    transform: 'translateX(300%)',
+                                    opacity: [0 , 1 , 0]
+                                },
+                                noSend: {
+                                    transform: 'translateX(-300%)',
+                                    opacity:0
+                                }
+                            }}
+                            initial={{ transform: 'translateX(-300%)', opacity: 0}}
+                            animate={isEnviado ? 'send' : 'noSend'}
+                            transition={{ duration: 1.5 }}
+                        >
+                            <SendIcon
+                                className='contacto__enviado-sendIcon'
+                            ></SendIcon>
+                        </motion.div>
+                        <motion.h4 
+                            className='contacto__enviado-texto'
+                            variants={{
+                                send: {
+                                    opacity: 1
+                                },
+                                noSend: {
+                                    opacity:0
+                                }
+                            }}
+                            initial={{ opacity: 0}}
+                            animate={isEnviado ? 'send' : 'noSend'}
+                            transition={{ duration: 1, delay: 1 }}
+                        >Muchas Gracias!</motion.h4>
+                    </motion.div>
                 </div>
             </div>
             <Footer></Footer>
