@@ -22,6 +22,7 @@
             color: white;
             font-weight: 200;
             font-family: var(--font_secundaria);
+            z-index: 2;
 
             &:hover{
                 transform: scale(1.1);

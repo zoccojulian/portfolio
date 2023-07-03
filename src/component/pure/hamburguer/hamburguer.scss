@@ -1,7 +1,7 @@
 .hamburguer{
     width: 35px;
     height: 35px;
-    background-color: aqua;
+    background-color: var(--color__skill-seleccionado);
     // position: fixed;
     // left: 5px;
     // top: 5px;
@@ -15,6 +15,7 @@
     .hamburguer__linea{
         width: 60%;
         height: 3px;
-        background-color: black;
+        background-color: var(--color__primario);
+        transition: background-color var(--transition_color);
     }
 }
