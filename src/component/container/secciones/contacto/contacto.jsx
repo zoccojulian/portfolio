@@ -9,6 +9,7 @@ import { Button } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import Footer from '../footer/footer';
 import { motion, transform } from 'framer-motion';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const emailFormat = (email) => {
     return email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
@@ -17,6 +18,57 @@ const emailFormat = (email) => {
 const initialContacto = { name: '', email: '', message: '' };
 
 const Contacto = () => {
+
+    const theme = createTheme({
+        components: {
+            MuiTextField: {
+                styleOverrides: {
+                    root: {
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                // Cambia el color del borde en estado normal
+                                borderColor: 'rgba(57, 62, 65, 0.893)',
+                            },
+                            '&:hover fieldset': {
+                                // Cambia el color del borde al pasar el ratón por encima
+                                borderColor: '#393e41ff',
+                            },
+                            '&.Mui-focused fieldset': {
+                                // Cambia el color del borde en estado de enfoque
+                                borderColor: '#22aaa1ff',
+                            },
+                        },
+                        '& .MuiInputLabel-root': {
+                            // Cambia el color del texto del label en estado normal
+                            color: 'rgba(57, 62, 65, 0.893)',
+                        },
+                        '& .MuiInputLabel-root.Mui-focused': {
+                            // Cambia el color del texto del label en estado de enfoque
+                            color: '#22aaa1ff',
+                        },
+                    },
+                },
+            },
+            MuiButton: {
+                styleOverrides: {
+                    root: {
+                        // Cambia el color de fondo del botón en estado normal
+                        backgroundColor: '#22aaa1ff',
+                        // Cambia el color del texto del botón en estado normal
+                        color: 'white',
+                        '&:hover': {
+                            // Cambia el color de fondo del botón al pasar el ratón por encima
+                            backgroundColor: 'rgb(7, 129, 120)',
+                        },
+                        '&.Mui-focused': {
+                            // Cambia el color de fondo del botón en estado de enfoque
+                            backgroundColor: 'green',
+                        },
+                    },
+                },
+            },
+        },
+    });
 
     const { referencia } = useIsInView(secciones.CONTACTO, secciones.SKILLS);
 
@@ -34,8 +86,9 @@ const Contacto = () => {
             !errorInput.message.error && contacto.message.length > 0
         ) {
 
-            fetch("https://formsubmit.co/ajax/zoccojulian@gmail.com", {method : "POST",
-            body: new FormData(ev.target)
+            fetch("https://formsubmit.co/ajax/zoccojulian@gmail.com", {
+                method: "POST",
+                body: new FormData(ev.target)
             }).then((respuesta) => {
                 setIsEnviado(true)
                 setTimeout(() => { setContacto(initialContacto); setIsEnviado(false) }, 4000)
@@ -111,50 +164,54 @@ const Contacto = () => {
                         className='contacto__formulario-box'
                         onSubmit={submit}
                     >
-                        <TextField
-                            // id="outlined-password-input"
-                            id='name'
-                            label="Nombre"
-                            type="text"
-                            fullWidth
-                            value={contacto.name}
-                            onChange={handleNameChange}
-                            error={errorInput.name.error}
-                            helperText={errorInput.name.error ? errorInput.name.texto : ''}
-                            size='small'
-                            name='name'
-                            className='input'
-                        />
-                        <TextField
-                            // id="outlined-password-input"
-                            id='email'
-                            label="Email"
-                            type="text"
-                            fullWidth
-                            value={contacto.email}
-                            onChange={handleNameChange}
-                            error={errorInput.email.error}
-                            helperText={errorInput.email.error ? errorInput.email.texto : ''}
-                            size='small'
-                            name='email'
-                        />
-                        <TextField
-                            // id="outlined-multiline-flexible"
-                            id='message'
-                            label="Mensaje"
-                            multiline
-                            maxRows={2}
-                            fullWidth
-                            value={contacto.message}
-                            onChange={handleNameChange}
-                            error={errorInput.message.error}
-                            helperText={errorInput.message.error ? errorInput.message.texto : ''}
-                            size='small'
-                            name='message'
-                        />
-                        <Button type='submit' variant="contained" endIcon={<SendIcon />}>
-                            Enviar
-                        </Button>
+                        <ThemeProvider theme={theme}>
+                            <TextField
+                                // id="outlined-password-input"
+                                id='name'
+                                label="Nombre"
+                                type="text"
+                                fullWidth
+                                value={contacto.name}
+                                onChange={handleNameChange}
+                                error={errorInput.name.error}
+                                helperText={errorInput.name.error ? errorInput.name.texto : ''}
+                                size='small'
+                                name='name'
+                            />
+
+                            <TextField
+                                // id="outlined-password-input"
+                                id='email'
+                                label="Email"
+                                type="text"
+                                fullWidth
+                                value={contacto.email}
+                                onChange={handleNameChange}
+                                error={errorInput.email.error}
+                                helperText={errorInput.email.error ? errorInput.email.texto : ''}
+                                size='small'
+                                name='email'
+                                sx={{ backgroundColor: '#0000' }}
+                            />
+                            <TextField
+                                // id="outlined-multiline-flexible"
+                                id='message'
+                                label="Mensaje"
+                                multiline
+                                maxRows={2}
+                                fullWidth
+                                value={contacto.message}
+                                onChange={handleNameChange}
+                                error={errorInput.message.error}
+                                helperText={errorInput.message.error ? errorInput.message.texto : ''}
+                                size='small'
+                                name='message'
+                            />
+
+                            <Button type='submit' variant="contained" endIcon={<SendIcon />} >
+                                Enviar
+                            </Button>
+                        </ThemeProvider>
                     </Box>
                     <motion.div
                         className='contacto__enviado'
@@ -184,19 +241,19 @@ const Contacto = () => {
                             animate={isEnviado ? 'send' : 'noSend'}
                             transition={{ duration: 1 }}
                         ></motion.div>
-                        <motion.div 
+                        <motion.div
                             className='contacto__enviado-icon'
                             variants={{
                                 send: {
                                     transform: 'translateX(300%)',
-                                    opacity: [0 , 1 , 0]
+                                    opacity: [0, 1, 0]
                                 },
                                 noSend: {
                                     transform: 'translateX(-300%)',
-                                    opacity:0
+                                    opacity: 0
                                 }
                             }}
-                            initial={{ transform: 'translateX(-300%)', opacity: 0}}
+                            initial={{ transform: 'translateX(-300%)', opacity: 0 }}
                             animate={isEnviado ? 'send' : 'noSend'}
                             transition={{ duration: 1.5 }}
                         >
@@ -204,17 +261,17 @@ const Contacto = () => {
                                 className='contacto__enviado-sendIcon'
                             ></SendIcon>
                         </motion.div>
-                        <motion.h4 
+                        <motion.h4
                             className='contacto__enviado-texto'
                             variants={{
                                 send: {
                                     opacity: 1
                                 },
                                 noSend: {
-                                    opacity:0
+                                    opacity: 0
                                 }
                             }}
-                            initial={{ opacity: 0}}
+                            initial={{ opacity: 0 }}
                             animate={isEnviado ? 'send' : 'noSend'}
                             transition={{ duration: 1, delay: 1 }}
                         >Muchas Gracias!</motion.h4>

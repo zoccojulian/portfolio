@@ -28,7 +28,7 @@ const TituloSeccion = ( { titulo } ) => {
             ref={ref}
             variants={variants}
             animate={inView ? 'visible' : 'hidden'}
-            transition={{delay: 0.3}}
+            transition={{delay: 0.1}}
         >
             <h2 className='tituloSeccion__titulo'>{ titulo }</h2>
         </motion.div>
