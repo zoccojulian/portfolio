@@ -5,6 +5,8 @@ import useIsInView from '../../../hooks/useIsInView';
 import { secciones } from '../../../../js/secciones';
 import LiFormacion from '../../../pure/liFormacion/liFormacion';
 import { useAnimate, useInView, stagger, motion } from 'framer-motion';
+import fondoDerecha from '../../../../assets/fondos/fondo_derecha.jpg';
+import { useSelector } from 'react-redux';
 
 const listaFormacion = [
     {
@@ -44,6 +46,8 @@ const Formacion = () => {
 
     const { referencia } = useIsInView(secciones.FORMACION, secciones.EXPERIENCIA);
 
+    const isThemeDark = useSelector ( ( state ) => state.theme.dark);
+
     const [scope, animate] = useAnimate();
     const isInView = useInView(scope)
 
@@ -79,6 +83,7 @@ const Formacion = () => {
             ref={referencia}
             className='formacion'
         >
+            {!isThemeDark && <img className='formacion__fondo' src={ fondoDerecha} ></img>}
             <TituloSeccion titulo='Formación' ></TituloSeccion>
             <div
                 className='formación__lista-container'

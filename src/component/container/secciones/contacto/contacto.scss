@@ -2,18 +2,36 @@
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    position: relative;
+
+    .contacto__fondo{
+        position: absolute;
+        min-width: 100%;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+
+    }
 
     .contacto__container {
         width: 100%;
         height: 90vh;
+        position: relative;
 
         .contacto__img {
             width: 100%;
             height: 50%;
-            overflow: hidden;
-            background-repeat: none;
-            background-position: center;
-            background-size: cover;
+            // overflow: hidden;
+            // background-repeat: none;
+            // background-position: center;
+            // background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.829);
+            img{
+                width: 100%;
+            }
         }
 
         .contacto__formulario {

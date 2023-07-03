@@ -8,6 +8,7 @@ import { secciones } from '../../../../js/secciones';
 import { useExperienciaAnimation } from '../../../hooks/useExperienciaAnimation';
 import ExperienciaSeleccionada from '../../../pure/experienciaSeleccionada/experienciaSeleccionada';
 
+
 const listaExperiencia = [
     {
         id:0,
@@ -83,8 +84,6 @@ const Experiencia = () => {
 
     const [selectId, setSelectId] = useState(null)
 
-    
-
     const scope = useExperienciaAnimation()
 
     return (
@@ -92,6 +91,7 @@ const Experiencia = () => {
             className='experiencia'
             ref={referencia}
         >
+            
             <TituloSeccion titulo='Experiencia' ></TituloSeccion>
             <motion.div 
                 className='experiencia__container'

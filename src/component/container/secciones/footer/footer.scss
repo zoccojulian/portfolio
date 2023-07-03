@@ -4,7 +4,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: var(--color__primario);
+    transition: background-color var(--transition_color);
+    border-top: 1px solid var(--color__icon);
     .footer__tecnologias-lista{
         width: 100%;
         display: flex;

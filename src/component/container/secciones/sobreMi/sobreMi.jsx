@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView, useScroll, useMotionValueEvent } from 'framer-motion';
 import { useSelector } from 'react-redux';
+import fondoCentro from '../../../../assets/fondos/fondo_centro.jpg'
 
 //Estilos
 import "./sobreMi.scss";
@@ -11,10 +12,12 @@ import Hobbies from '../../hobbies/hobbies';
 
 const SobreMi = () => {
 
-    const { referencia } = useIsInView(secciones.SOBRE_MI, secciones.INICIO)
+    const { referencia } = useIsInView(secciones.SOBRE_MI, secciones.INICIO);
 
-    const textoRef = useRef(null)
-    const textoView = useInView(textoRef)
+    const isThemeDark = useSelector ( ( state ) => state.theme.dark);
+
+    const textoRef = useRef(null);
+    const textoView = useInView(textoRef);
 
     const variants_texto = {
         visible:{
@@ -29,6 +32,7 @@ const SobreMi = () => {
         <motion.section className='sobreMi'
             ref={referencia}
         >
+            {!isThemeDark && <img  className='sobreMi__fondo' src={ fondoCentro } ></img>}
             <TituloSeccion titulo='Sobre Mi' ></TituloSeccion>
             <motion.div
                 className='sobreMi__texto-container'

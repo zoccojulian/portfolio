@@ -8,6 +8,17 @@
     padding-top: 3rem;
     transition: background-color var(--transition_color);
     overflow: hidden;
+    position: relative;
+
+    .sobreMi__fondo{
+        position: absolute;
+        min-width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+
+    }
+
     
     .sobreMi__texto-container{
         text-align: center;
@@ -17,6 +28,7 @@
         flex-direction: column;
         justify-content: space-between;
         overflow: hidden;
+        z-index: 1;
 
         .sobreMi__texto{
             font-size: 1.5rem;

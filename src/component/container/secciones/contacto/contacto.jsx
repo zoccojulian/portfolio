@@ -10,6 +10,9 @@ import SendIcon from '@mui/icons-material/Send';
 import Footer from '../footer/footer';
 import { motion, transform } from 'framer-motion';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import imagenPhone from '../../../../assets/grafica/Phone Call.png';
+import fondoCentro from '../../../../assets/fondos/fondo_centro.jpg';
+import { useSelector } from 'react-redux';
 
 const emailFormat = (email) => {
     return email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
@@ -75,7 +78,9 @@ const Contacto = () => {
     const [contacto, setContacto] = useState(initialContacto)
     const [errorInput, setErrorInput] = useState({ name: { error: false, texto: '' }, email: { error: false, texto: '' }, message: { error: false, texto: '' } })
 
-    const [isEnviado, setIsEnviado] = useState(false)
+    const [isEnviado, setIsEnviado] = useState(false);
+
+    const isThemeDark = useSelector ( ( state ) => state.theme.dark);
 
     const submit = (ev) => {
 
@@ -154,8 +159,11 @@ const Contacto = () => {
 
     return (
         <section className='contacto' ref={referencia}>
+            {!isThemeDark && <img className='contacto__fondo' src={ fondoCentro} ></img>}
             <div className='contacto__container'>
-                <div className='contacto__img' style={{ backgroundImage: `url(${imagen})` }}>
+                {/* <div className='contacto__img' style={{ backgroundImage: `url(${imagen})` }}> */}
+                <div className='contacto__img'>
+                <img src={ imagenPhone } ></img>
                 </div>
                 <div className='contacto__formulario'>
                     <h4 className='contacto__formulario-titulo'>Dejame un mensaje ...</h4>

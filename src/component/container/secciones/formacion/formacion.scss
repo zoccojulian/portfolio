@@ -5,6 +5,16 @@
     background-color: var(--color__fondo-formacion);
     padding: 3rem;
     transition: background-color var(--transition_color);
+    position: relative;
+
+    .formacion__fondo{
+        position: absolute;
+        min-width: 100%;
+        right: 0;
+        top: 0;
+        opacity: 0.5;
+
+    }
 
     .formación__lista-container{
         width: 100%;
@@ -14,6 +24,7 @@
         align-items:center;
         justify-content: center;
         margin-top: 2rem;
+
         
         .formacion__lista{
             list-style: none;
