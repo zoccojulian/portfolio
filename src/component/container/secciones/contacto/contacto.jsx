@@ -9,8 +9,8 @@ import SendIcon from '@mui/icons-material/Send';
 import Footer from '../footer/footer';
 import { motion, transform } from 'framer-motion';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import imagenPhone from '../../../../assets/grafica/Phone Call.png';
-import fondoCentro from '../../../../assets/fondos/fondo_centro.jpg';
+import imagenPhone from '../../../../assets/grafica/Phone Call.webp';
+import fondoCentro from '../../../../assets/fondos/fondo_centro.webp';
 import { useSelector } from 'react-redux';
 
 const emailFormat = (email) => {

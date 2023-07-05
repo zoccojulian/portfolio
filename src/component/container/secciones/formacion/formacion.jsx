@@ -5,34 +5,34 @@ import useIsInView from '../../../hooks/useIsInView';
 import { secciones } from '../../../../js/secciones';
 import LiFormacion from '../../../pure/liFormacion/liFormacion';
 import { useAnimate, useInView, stagger, motion } from 'framer-motion';
-import fondoDerecha from '../../../../assets/fondos/fondo_derecha.jpg';
+import fondoDerecha from '../../../../assets/fondos/fondo_derecha.webp';
 import { useSelector } from 'react-redux';
 
 const listaFormacion = [
     {
         id: 0,
-        foto: '/img/formacion/UBA.png',
+        foto: '/img/formacion/UBA.webp',
         titulo: 'Ingeniería Informáctica (3 años)',
         institucion: 'Universidad de Buenos Aires',
         periodo: '2002-2005'
     },
     {
         id: 1,
-        foto: '/img/formacion/logo_UAI.png',
+        foto: '/img/formacion/logo_UAI.webp',
         titulo: 'Realización Audiovisual',
         institucion: 'Universidad Abierta Interamericana',
         periodo: '2005-2008'
     },
     {
         id: 2,
-        foto: '/img/formacion/alura.png',
+        foto: '/img/formacion/alura.webp',
         titulo: 'Desarrolador Full Stack',
         institucion: 'Oracle One - ALURA',
         periodo: '2021-2022'
     },
     {
         id: 3,
-        foto: '/img/formacion/openBootCamp.png',
+        foto: '/img/formacion/openBootCamp.webp',
         titulo: 'Front End React Js',
         institucion: 'OpenBootCamp',
         periodo: '2022-2023'

@@ -12,7 +12,7 @@ import ExperienciaSeleccionada from '../../../pure/experienciaSeleccionada/exper
 const listaExperiencia = [
     {
         id:0,
-        foto: '/img/experiencia/Codificador.png',
+        foto: '/img/experiencia/Codificador.webp',
         nombre: 'Codificador de texto',
         tecno: ['Html', 'Css', 'Js'],
         descripcion: 'Codificador de texto',
@@ -21,7 +21,7 @@ const listaExperiencia = [
     },
     {
         id:1,
-        foto: '/img/experiencia/Ahorcado.png',
+        foto: '/img/experiencia/Ahorcado.webp',
         nombre: 'Juego Ahorcado',
         tecno: ['Html', 'Css', 'Js'],
         descripcion: 'Juego Ahorcado',
@@ -30,7 +30,7 @@ const listaExperiencia = [
     },
     {
         id:2,
-        foto: '/img/experiencia/e-commerce.png',
+        foto: '/img/experiencia/e-commerce.webp',
         nombre: 'Alura Geek - e-commerce',
         tecno: ['Html', 'Css', 'Js'],
         descripcion: 'Pagína de ventas de productos Geek',
@@ -39,7 +39,7 @@ const listaExperiencia = [
     },
     {
         id:3,
-        foto: '/img/experiencia/Conversor.png',
+        foto: '/img/experiencia/Conversor.webp',
         nombre: 'Conversor',
         tecno: ['Java'],
         descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA',
@@ -48,7 +48,7 @@ const listaExperiencia = [
     },
     {
         id:4,
-        foto: '/img/experiencia/HotelAlura.png',
+        foto: '/img/experiencia/HotelAlura.webp',
         nombre: 'Hotel Alura',
         tecno: ['Java', 'MySQL'],
         descripcion: 'App de ecritorio creada con Java, con base de datos MySQL. Trabajo hecho para la formación en Oracle One Next Generation - ALURA',
@@ -57,7 +57,7 @@ const listaExperiencia = [
     },
     {
         id:5,
-        foto: '/img/experiencia/simina.jpg',
+        foto: '/img/experiencia/simina.webp',
         nombre: 'Simina Shoes',
         tecno: ['Html', 'Sass', 'Js', 'Bodymovin'],
         descripcion: 'Página comercial realizada para venta de zapatos. Actualmente fuera de linea. ',
@@ -66,7 +66,7 @@ const listaExperiencia = [
     },
     {
         id:6,
-        foto: '/img/experiencia/pagina_pokemon.jpg',
+        foto: '/img/experiencia/pagina_pokemon.webp',
         nombre: 'Pokemon Page',
         tecno: ['ReactJs', 'Sass'],
         descripcion: 'Página Realizada con React, Sass para estilos, MUI para algunos componentes. Utilizando la API PokemonApi',

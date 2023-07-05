@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView, useScroll, useMotionValueEvent } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import fondoCentro from '../../../../assets/fondos/fondo_centro.jpg'
+import fondoCentro from '../../../../assets/fondos/fondo_centro.webp'
 
 //Estilos
 import "./sobreMi.scss";
