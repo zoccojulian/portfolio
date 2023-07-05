@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { useState } from 'react';
 import './experiencia.scss';
 import TituloSeccion from '../../../pure/tituloSeccion/tituloSeccion';
 import LiExperiencia from '../../../pure/liExperiencia/liExperiencia';

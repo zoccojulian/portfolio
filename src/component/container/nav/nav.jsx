@@ -3,6 +3,8 @@ import LiNav from '../../pure/liNav/LiNav';
 import { secciones } from '../../../js/secciones';
 import ButtonHamburguer from '../../pure/hamburguer/buttonHamburguer';
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux';
+import { setIsOpen } from '../../../store/slices/menuSlice';
 
 
 //Style
@@ -21,8 +23,10 @@ const Nav = ( { width } ) => {
         {nombre: 'CONTACTO', link:secciones.CONTACTO},
     ]
 
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
+    const isOpen = useSelector((state) => state.menu.isOpen)
+    const dispatch = useDispatch();
 
     const variants = {
         open: {
@@ -35,7 +39,8 @@ const Nav = ( { width } ) => {
     }
 
     const toggle = () => {
-        setIsOpen((isOpen) => !isOpen)
+        // setIsOpen((isOpen) => !isOpen)
+        dispatch( setIsOpen(!isOpen) )
     }
 
     return (

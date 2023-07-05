@@ -23,7 +23,8 @@ const Inicio = () => {
                 <div className='inicio__foto'>
                     <img 
                         className='inicio__foto-front'
-                        src={require('../../../../assets/foto/foto_01_c.png')} 
+                        src={require('../../../../assets/foto/foto_01_c.png')}
+                        alt='foto_julianZocco_perfil'
                     ></img>
                 </div>
             </div>

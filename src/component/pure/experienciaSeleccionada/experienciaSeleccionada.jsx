@@ -18,10 +18,13 @@ const ExperienciaSeleccionada = ( { selectId , setSelectId } ) => {
             >x</span>
             <div className='seleccion__container'>
                 <div className='seleccion__imagen'>
-                    <img src={selectId.foto}></img>
+                    <img 
+                        src={selectId.foto}
+                        alt= { selectId.foto.match(/\/([^/]+)\.\w+$/)[1] }
+                    ></img>
                 </div>
                 <div className='seleccion__descripcion'>
-                    <h4 className='seleccion__nombre' >{selectId.nombre}</h4>
+                    <h4 className='seleccion__nombre'>{selectId.nombre}</h4>
                     <div className='seleccion__links'>
                         <a className='seleccion__dir'
                             href= { selectId.demo } target='_blank'>Demo</a>
