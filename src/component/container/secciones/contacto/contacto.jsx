@@ -162,7 +162,7 @@ const Contacto = () => {
             <div className='contacto__container'>
                 {/* <div className='contacto__img' style={{ backgroundImage: `url(${imagen})` }}> */}
                 <div className='contacto__img'>
-                <img src={ imagenPhone } ></img>
+                <img src={ imagenPhone } alt='imagen_contacto'></img>
                 </div>
                 <div className='contacto__formulario'>
                     <h4 className='contacto__formulario-titulo'>Dejame un mensaje ...</h4>
