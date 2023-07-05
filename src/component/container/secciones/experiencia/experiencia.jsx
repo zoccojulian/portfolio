@@ -61,8 +61,8 @@ const listaExperiencia = [
         nombre: 'Simina Shoes',
         tecno: ['Html', 'Sass', 'Js', 'Bodymovin'],
         descripcion: 'Página comercial realizada para venta de zapatos. Actualmente fuera de linea. ',
-        demo: 'http://simina.zoccojulian.site/',
-        repositorio: null
+        demo: 'https://simina-page.netlify.app/',
+        repositorio: 'https://github.com/zoccojulian/page_venta_calzado'
     },
     {
         id:6,
